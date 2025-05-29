@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    >
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="@dimen/widget_size_10"
+            android:background="@drawable/bg_topright_20"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:id="@+id/btnScan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:layout_marginStart="@dimen/widget_size_24"
+                android:layout_marginEnd="@dimen/widget_size_26"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="@dimen/widget_size_62"
+                    android:layout_height="@dimen/widget_size_44"
+                    app:cardBackgroundColor="@color/transparent"
+                    app:cardCornerRadius="@dimen/widget_size_25"
+                    app:strokeWidth="0dp">
+
+                    <ImageView
+                        android:id="@+id/imvScan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_scan" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:id="@+id/txtScan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/widget_size_4"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/txt_tools_scan"
+                    android:textColor="#939191"
+                    android:textSize="@dimen/font_size_12" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnAI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_weight="1"
+                android:layout_marginEnd="@dimen/widget_size_26"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnCamera"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="@dimen/widget_size_62"
+                    android:layout_height="@dimen/widget_size_44"
+                    app:cardBackgroundColor="@color/transparent"
+                    app:cardCornerRadius="@dimen/widget_size_25"
+                    app:strokeWidth="0dp">
+
+                    <ImageView
+                        android:id="@+id/imvAI"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_ai_expert" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:id="@+id/txtAI"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/widget_size_4"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Tutor expert"
+                    android:textColor="#939191"
+                    android:textSize="@dimen/font_size_12" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnTools"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_weight="1"
+                android:layout_marginEnd="@dimen/widget_size_26"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnCamera"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="@dimen/widget_size_62"
+                    android:layout_height="@dimen/widget_size_44"
+                    app:cardBackgroundColor="@color/transparent"
+                    app:cardCornerRadius="@dimen/widget_size_25"
+                    app:strokeWidth="0dp">
+
+                    <ImageView
+                        android:id="@+id/imvTools"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_tool" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:id="@+id/txtTools"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/widget_size_4"
+                    android:fontFamily="@font/montserrat_semi_bold"
+                    android:text="Tools"
+                    android:textColor="#939191"
+                    android:textSize="@dimen/font_size_12" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnSettings"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/widget_size_24"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnCamera"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="@dimen/widget_size_62"
+                    android:layout_height="@dimen/widget_size_44"
+                    app:cardBackgroundColor="@color/transparent"
+                    app:cardCornerRadius="@dimen/widget_size_25"
+                    android:layout_gravity="center"
+                    app:strokeWidth="0dp">
+
+                    <ImageView
+                        android:id="@+id/imvSettings"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_settings" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:id="@+id/txtSettings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/widget_size_4"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Settings"
+                    android:layout_gravity="center"
+                    android:textColor="#939191"
+                    android:textSize="@dimen/font_size_12" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

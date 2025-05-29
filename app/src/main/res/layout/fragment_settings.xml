@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+        <com.google.android.material.card.MaterialCardView
+
+            android:id="@+id/settings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="0dp"
+            app:cardBackgroundColor="@color/white"
+            app:strokeWidth="0dp"
+            app:cardElevation="@dimen/widget_size_3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/widget_size_30"
+                android:elevation="@dimen/widget_size_10"
+                android:outlineAmbientShadowColor="@color/black"
+                android:outlineSpotShadowColor="@color/black"
+
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/widget_size_58"
+                    android:layout_height="@dimen/widget_size_58"
+                    android:layout_marginEnd="@dimen/widget_size_9"
+                    android:src="@drawable/imv_setting" />
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txt_username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:text="Guest"
+                        android:textColor="#032C22"
+                        android:textSize="@dimen/font_size_14" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/gradeTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="Middle school"
+                            android:textColor="#506560"
+                            android:textSize="@dimen/font_size_14" />
+
+                        <ImageView
+                            android:layout_width="@dimen/widget_size_15"
+                            android:layout_height="@dimen/widget_size_15"
+                            android:layout_marginStart="@dimen/widget_size_13"
+                            android:src="@drawable/ic_arrow_drop_down" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/btnLogin"
+                    android:layout_width="@dimen/widget_size_124"
+                    android:layout_height="@dimen/widget_size_32"
+                    android:background="@drawable/bg_gradient_conner_20"
+                    android:fontFamily="@font/montserrat_semi_bold"
+                    android:gravity="center"
+                    android:text="Log in/Sign up"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/font_size_12" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+        <LinearLayout
+            android:id="@+id/promoBanner"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/widget_size_78"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_promo_banner"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/settings">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:gravity="center"
+                    android:text="Math  Solver AI"
+                    android:textColor="#397465"
+                    android:textSize="@dimen/font_size_16" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/widget_size_4"
+                    android:text="Upgrade to exceed 95% accuracy"
+                    android:textColor="#667B75"
+                    android:textSize="@dimen/font_size_10" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/upgradeButton"
+                android:layout_width="@dimen/widget_size_76"
+                android:layout_height="@dimen/widget_size_26"
+                android:background="@drawable/bg_update"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:gravity="center"
+                android:text="Upgrade"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/font_size_12" />
+        </LinearLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/promoBanner">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="12dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/favourite"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/widget_size_12"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_conner_14"
+                    android:backgroundTint="#f5f5f5"
+                    android:foreground="@drawable/selector_conner_12"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/widget_size_8"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/widget_size_20"
+                        android:layout_height="@dimen/widget_size_20"
+                        android:layout_marginStart="@dimen/widget_size_24"
+                        android:src="@drawable/ic_setting_favourite" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/widget_size_20"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Favourite"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/font_size_14" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/widget_size_16"
+                        android:layout_height="@dimen/widget_size_16"
+                        android:layout_marginEnd="@dimen/widget_size_14"
+                        android:src="@drawable/ic_setting_next" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/quick"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/widget_size_12"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_conner_14"
+                    android:backgroundTint="#f5f5f5"
+                    android:foreground="@drawable/selector_conner_12"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/widget_size_8"
+                    app:layout_constraintTop_toBottomOf="@+id/favourite">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/widget_size_20"
+                        android:layout_height="@dimen/widget_size_20"
+                        android:layout_marginStart="@dimen/widget_size_24"
+                        android:src="@drawable/ic_setting_qquick" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/widget_size_20"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Quick Search"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/font_size_14" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/widget_size_16"
+                        android:layout_height="@dimen/widget_size_16"
+                        android:layout_marginEnd="@dimen/widget_size_14"
+                        android:src="@drawable/ic_setting_next" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/clear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/widget_size_12"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_conner_14"
+                    android:backgroundTint="#f5f5f5"
+                    android:foreground="@drawable/selector_conner_12"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/widget_size_8"
+                    app:layout_constraintTop_toBottomOf="@+id/quick">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/widget_size_20"
+                        android:layout_height="@dimen/widget_size_20"
+                        android:layout_marginStart="@dimen/widget_size_24"
+                        android:src="@drawable/ic_setting_clear" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/widget_size_20"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Clear history"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/font_size_14" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/widget_size_16"
+                        android:layout_height="@dimen/widget_size_16"
+                        android:layout_marginEnd="@dimen/widget_size_14"
+                        android:src="@drawable/ic_setting_next" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/Btnlanguage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/widget_size_12"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_conner_14"
+                    android:backgroundTint="#f5f5f5"
+                    android:foreground="@drawable/selector_conner_12"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/widget_size_8"
+                    app:layout_constraintTop_toBottomOf="@id/clear">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/widget_size_20"
+                        android:layout_height="@dimen/widget_size_20"
+                        android:layout_marginStart="@dimen/widget_size_24"
+                        android:src="@drawable/ic_setting_language" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/widget_size_20"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="@string/txt_language"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/font_size_14" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/widget_size_16"
+                        android:layout_height="@dimen/widget_size_16"
+                        android:layout_marginEnd="@dimen/widget_size_14"
+                        android:src="@drawable/ic_setting_next" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/BtnRate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/widget_size_12"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_conner_14"
+                    android:backgroundTint="#f5f5f5"
+                    android:foreground="@drawable/selector_conner_12"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/widget_size_8"
+
+                    app:layout_constraintTop_toBottomOf="@id/Btnlanguage">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/widget_size_20"
+                        android:layout_height="@dimen/widget_size_20"
+                        android:layout_marginStart="@dimen/widget_size_24"
+                        android:src="@drawable/ic_setting_rate" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/widget_size_20"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Rate app"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/font_size_14" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/widget_size_16"
+                        android:layout_height="@dimen/widget_size_16"
+                        android:layout_marginEnd="@dimen/widget_size_14"
+                        android:src="@drawable/ic_setting_next" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/BtnShare"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/widget_size_12"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_conner_14"
+                    android:backgroundTint="#f5f5f5"
+                    android:foreground="@drawable/selector_conner_12"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/widget_size_8"
+
+                    app:layout_constraintTop_toBottomOf="@id/BtnRate"
+                    tools:layout_editor_absoluteX="12dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/widget_size_20"
+                        android:layout_height="@dimen/widget_size_20"
+                        android:layout_marginStart="@dimen/widget_size_24"
+                        android:src="@drawable/ic_setting_share" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/widget_size_20"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Share app"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/font_size_14" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/widget_size_16"
+                        android:layout_height="@dimen/widget_size_16"
+                        android:layout_marginEnd="@dimen/widget_size_14"
+                        android:src="@drawable/ic_setting_next" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/BtnPrivacy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/widget_size_12"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_conner_14"
+                    android:backgroundTint="#f5f5f5"
+                    android:foreground="@drawable/selector_conner_12"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/widget_size_8"
+
+                    app:layout_constraintTop_toBottomOf="@id/moreApp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/widget_size_20"
+                        android:layout_height="@dimen/widget_size_20"
+                        android:layout_marginStart="@dimen/widget_size_24"
+                        android:src="@drawable/ic_setting_privacy" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/widget_size_20"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Privacy"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/font_size_14" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/widget_size_16"
+                        android:layout_height="@dimen/widget_size_16"
+                        android:layout_marginEnd="@dimen/widget_size_14"
+                        android:src="@drawable/ic_setting_next" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/moreApp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/widget_size_12"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_conner_14"
+                    android:backgroundTint="#f5f5f5"
+                    android:foreground="@drawable/selector_conner_12"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/widget_size_8"
+
+                    app:layout_constraintTop_toBottomOf="@id/BtnShare">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/widget_size_20"
+                        android:layout_height="@dimen/widget_size_20"
+                        android:layout_marginStart="@dimen/widget_size_24"
+                        android:src="@drawable/ic_setting_more" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/widget_size_20"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="More app"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/font_size_14" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/widget_size_16"
+                        android:layout_height="@dimen/widget_size_16"
+                        android:layout_marginEnd="@dimen/widget_size_14"
+                        android:src="@drawable/ic_setting_next" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/BtnVersion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/widget_size_12"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_conner_14"
+                    android:backgroundTint="#f5f5f5"
+                    android:foreground="@drawable/selector_conner_12"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/widget_size_8"
+                    app:layout_constraintTop_toBottomOf="@id/BtnPrivacy">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/widget_size_20"
+                        android:layout_height="@dimen/widget_size_20"
+                        android:layout_marginStart="@dimen/widget_size_24"
+                        android:src="@drawable/ic_setting_version" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/widget_size_20"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Version"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/font_size_14" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/widget_size_16"
+                        android:layout_height="@dimen/widget_size_16"
+                        android:layout_marginEnd="@dimen/widget_size_14"
+                        android:src="@drawable/ic_setting_next" />
+
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!--    <FrameLayout-->
+    <!--        android:id="@+id/layoutAds"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_alignParentBottom="true"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent" />-->
+
+</RelativeLayout>

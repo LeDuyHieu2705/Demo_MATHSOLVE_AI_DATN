@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">Math &amp; Solver AI</string>
+    <string name="file_does_not_exist">File does not exist</string>
+    <string name="set_as_ringtone">Set as ringtone</string>
+    <string name="cannot_set_ringtone">Cannot set ringtone</string>
+    <string name="please_grant_system_edit_permission_to_set_alarm">Please grant system edit permission to set alarm</string>
+    <string name="unable_to_access_mediastore">Unable to access MediaStore</string>
+    <string name="set_as_alarm">Set as alarm</string>
+    <string name="cannot_set_as_alarm">Cannot set as alarm</string>
+    <string name="error_setting_as_alarm">Error setting as alarm</string>
+    <string name="share_audio_via">Share audio via</string>
+    #
+    <string name="this_action_may_contain_advertising">This action may contain advertising</string>
+    <string name="txt_after">After turning it on, click the search button to take screenshots and solve questions whenever needed</string>
+    <string name="txt_start"><![CDATA[Start recording/streaming with Math & SolverAI]]></string>
+    <string name="txt_during"><![CDATA[During recording or streaming, Math & Solver AI can access all content displayed on your screen or played on your device, including sensitive data like passwords, payment details, photos, messages, and audio.]]></string>
+    #
+    <string name="title_language">Language</string>
+    <string name="txt_language">Language</string>
+
+    #
+    <string name="txt_english" translatable="false">English</string>
+    <string name="txt_france" translatable="false">French</string>
+    <string name="txt_german" translatable="false">German</string>
+    <string name="txt_hindi" translatable="false">Hindi</string>
+    <string name="txt_spanish" translatable="false">Spanish</string>
+    <string name="txt_portugal" translatable="false">Portuguese</string>
+    <string name="txt_vietnamese" translatable="false">Vietnamese</string>
+    <string name="txt_china" translatable="false">China</string>
+    <string name="txt_russia" translatable="false">Russia</string>
+    <string name="txt_korea" translatable="false">Korea</string>
+    <string name="txt_indo" translatable="false">Indonesia</string>
+    <string name="txt_japan" translatable="false">Japan</string>
+    <string name="txt_phi" translatable="false">Filippines</string>
+    <string name="txt_italy" translatable="false">Italian</string>
+
+    <string name="txt_math"><![CDATA[Math & Solver AI can access all on-screen or played content, including sensitive data like passwords, payments, photos, messages, and audio.]]></string>
+    #
+    <string name="latest_version">Latest version</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txt_remove_ads"><p><font color="#251B01">Don\'t let ads bother your experience, buy the VIP package to </font></p><b><font color="#F9E854">Remove ads forever</font></b></string>
+    <string name="txt_math_solve_ai_vip"><![CDATA[Math & Solve AI VIP]]></string>
+    <string name="pick_image_chooser_title">Chọn nguồn</string>
+    <string name="txt_about"><![CDATA[Math&Solver makes learning easier with tools for math solving, subject support, translation, and grammar check — all in one app.]]></string>
+    <string name="txt_tools_scan"><![CDATA[Scan & solve]]></string>
+
+
+    <string name="txt_sub_math">Math</string>
+    <string name="txt_sub_check_grammar">Check grammar</string>
+    <string name="txt_sub_translate">Translate</string>
+
+
+</resources>
