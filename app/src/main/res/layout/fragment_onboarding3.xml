@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragment.FragmentOnboarding3">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/bg_onboard_3"
+        app:layout_constraintDimensionRatio="1:1"
+        android:scaleType="fitXY"
+        android:layout_marginHorizontal="@dimen/widget_size_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/widget_size_29"
+        android:fontFamily="@font/montserrat_bold"
+        android:paddingHorizontal="@dimen/widget_size_20"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/widget_size_47"
+        android:text="You smart study assistant"
+        android:textColor="#032C22"
+        android:textSize="@dimen/font_size_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatImageView" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/widget_size_45"
+        android:layout_marginTop="@dimen/widget_size_12"
+        android:text="here to support you anytime, anywhere!"
+        android:textColor="#727272"
+        android:textSize="@dimen/font_size_14"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    />
+</androidx.constraintlayout.widget.ConstraintLayout>

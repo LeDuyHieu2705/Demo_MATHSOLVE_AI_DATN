@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@drawable/bg_splash">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ratingView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:background="@drawable/bg_conner_12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.35"
+        app:layout_constraintWidth_max="420dp">
+
+        <ImageView
+            android:id="@+id/imgTop"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_marginTop="30dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/rating_img_happy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_max="180dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_max="180dp"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Bạn thích ứng dụng?"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgTop" />
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="Ý kiến của bạn rất quan trọng với chúng tôi!"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+        <RatingBar
+            android:id="@+id/starRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="5dp"
+            android:numStars="5"
+            android:progress="5"
+            android:progressBackgroundTint="@color/text_gray"
+            android:progressTint="@color/yellow"
+            android:rating="5"
+            android:scaleX="1"
+            android:scaleY="1"
+            android:stepSize="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv2" />
+
+        <ImageView
+            android:id="@+id/icArrow"
+            android:layout_width="27dp"
+            android:layout_height="22dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/rating_ic_vector_star"
+            app:layout_constraintEnd_toEndOf="@id/starRating"
+            app:layout_constraintTop_toBottomOf="@id/starRating"
+            tools:ignore="ContentDescription" />
+
+
+
+        <TextView
+            android:id="@+id/tvArrow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="bottom|end"
+            android:text="Tốt nhất chúng ta có thể làm được"
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toStartOf="@id/icArrow"
+            app:layout_constraintStart_toStartOf="@id/starRating"
+            app:layout_constraintTop_toBottomOf="@id/starRating"
+            tools:ignore="UnusedAttribute" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtFeedback"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="21dp"
+            android:layout_marginTop="@dimen/widget_size_39"
+            android:background="@drawable/bg_conner_12"
+            android:backgroundTint="#efefef"
+            android:gravity="top"
+            android:inputType="text|textMultiLine|textNoSuggestions"
+            android:lines="4"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="10dp"
+            android:textColor="#313131"
+            android:hint="Vui lòng để lại phản hồi để giúp chúng tôi cải thiện sản phẩm"
+            android:textColorHint="#BDBDBD"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_min="80dp"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvArrow" />
+
+        <TextView
+            android:id="@+id/btnNegative"
+            android:layout_width="0dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="54dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="50dp"
+            android:autoSizeMaxTextSize="14sp"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/bg_conner_12"
+            android:backgroundTint="#B6B6B6"
+            android:elevation="16dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:gravity="center"
+            android:maxLines="1"
+            android:paddingHorizontal="12dp"
+            android:text="Để sau"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnPositive"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edtFeedback"
+            app:layout_constraintWidth_max="140dp"
+            app:layout_constraintWidth_min="120dp"
+            tools:targetApi="p" />
+
+        <TextView
+            android:id="@+id/btnPositive"
+            android:layout_width="0dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="54dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginBottom="50dp"
+            android:autoSizeMaxTextSize="14sp"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/bg_conner_12"
+            android:backgroundTint="#40D2AE"
+            android:elevation="16dp"
+            android:gravity="center"
+            android:text="Gửi"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montserrat_bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnNegative"
+            app:layout_constraintTop_toBottomOf="@id/edtFeedback"
+            app:layout_constraintWidth_max="140dp"
+            app:layout_constraintWidth_min="120dp"
+            tools:targetApi="p" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

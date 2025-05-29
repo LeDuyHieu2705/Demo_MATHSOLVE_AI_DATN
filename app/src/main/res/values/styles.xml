@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TitleTop">
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/montserrat_bold</item>
+    </style>
+    <style name="BottomNavText" parent="TextAppearance.AppCompat.Caption">
+        <item name="fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="SubjectTitleStyle">
+        <item name="android:textSize">@dimen/font_size_12</item>
+        <item name="android:textColor">#032C22</item>
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+    </style>
+
+</resources>

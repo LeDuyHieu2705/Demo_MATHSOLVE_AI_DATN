@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.CropImageActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.hieuld.datn.mathsolved.ui.cropper.CropImageView
+            android:id="@+id/cropImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:id="@+id/fragmentContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.hieuld.datn.mathsolved.ui.cropper.CropImageView>
+
+        <LinearLayout
+            android:id="@+id/bottomControls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingVertical="@dimen/widget_size_16"
+            android:layout_marginBottom="@dimen/widget_size_20"
+            app:layout_constraintBottom_toBottomOf="@+id/cropImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnReturn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="#4D05392C"
+                    app:cardCornerRadius="@dimen/widget_size_50"
+                    app:strokeWidth="0dp">
+
+                    <ImageView
+                        android:id="@+id/imvReturn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/widget_size_26"
+                        android:layout_margin="@dimen/widget_size_10"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_return" />
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnTick"
+                android:layout_width="@dimen/widget_size_76"
+                android:layout_height="@dimen/widget_size_76"
+                app:cardBackgroundColor="@color/white"
+                app:strokeWidth="1dp"
+                android:layout_marginHorizontal="@dimen/widget_size_38"
+                app:cardCornerRadius="@dimen/widget_size_50"
+                app:strokeColor="#15B28B"
+              >
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imvTick"
+                    android:layout_width="@dimen/widget_size_38"
+                    android:layout_height="@dimen/widget_size_38"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_camera_tick" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/BtnRote"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="#4D05392C"
+                    app:cardCornerRadius="@dimen/widget_size_50"
+                    app:strokeWidth="0dp">
+
+                    <ImageView
+                        android:id="@+id/imvRote"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/widget_size_26"
+                        android:layout_margin="@dimen/widget_size_10"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_crop_copy" />
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

@@ -1,0 +1,266 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.otaliastudios.cameraview.CameraView
+        android:id="@+id/cameraView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:keepScreenOn="true"
+        app:cameraAudio="off"
+        app:cameraAudioBitRate="64000"
+        app:cameraAudioCodec="aac"
+        app:cameraAutoFocusMarker="@string/cameraview_default_autofocus_marker"
+        app:cameraAutoFocusResetDelay="3000"
+        app:cameraEngine="camera2"
+        app:cameraExperimental="true"
+        app:cameraFacing="back"
+        app:cameraFlash="off"
+        app:cameraGestureLongTap="none"
+        app:cameraGesturePinch="zoom"
+        app:cameraGestureScrollHorizontal="none"
+        app:cameraGestureScrollVertical="none"
+        app:cameraGestureTap="autoFocus"
+        app:cameraGrid="off"
+        app:cameraMode="picture"
+        app:cameraPictureFormat="jpeg"
+        app:cameraPlaySounds="false"
+        app:cameraPreview="glSurface"
+        app:cameraUseDeviceOrientation="false"
+        app:cameraVideoBitRate="10000000"
+        app:cameraVideoCodec="deviceDefault"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <LinearLayout
+        android:id="@+id/layoutQuickSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/widget_size_24"
+        android:paddingTop="@dimen/widget_size_35">
+
+        <LinearLayout
+            android:id="@+id/quickSearch"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="@dimen/widget_size_40"
+            android:background="@drawable/bg_quick_search"
+            android:gravity="center"
+            android:layout_marginEnd="@dimen/widget_size_93"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/widget_size_12">
+
+            <ImageView
+                android:layout_width="@dimen/widget_size_22"
+                android:layout_height="@dimen/widget_size_22"
+                android:layout_marginEnd="@dimen/widget_size_8"
+                android:src="@drawable/ic_search" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quick search"
+                android:gravity="start"
+                android:maxLines="1"
+                android:textColor="#15B28B"
+                android:textSize="@dimen/font_size_14"
+                android:fontFamily="@font/montserrat_bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/topRightButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="@dimen/widget_size_8">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="@dimen/widget_size_44"
+                android:layout_height="@dimen/widget_size_44"
+                android:layout_marginEnd="@dimen/widget_size_8"
+                app:cardBackgroundColor="#032C22"
+                app:strokeWidth="0dp"
+                app:cardCornerRadius="@dimen/widget_size_22">
+
+                <ImageView
+                    android:layout_width="@dimen/widget_size_26"
+                    android:layout_height="@dimen/widget_size_26"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_help" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnFlash"
+                android:layout_width="@dimen/widget_size_44"
+                android:layout_height="@dimen/widget_size_44"
+                app:cardBackgroundColor="#032C22"
+                app:strokeWidth="0dp"
+                app:cardCornerRadius="@dimen/widget_size_22">
+
+                <ImageView
+                    android:id="@+id/imvFlash"
+                    android:layout_width="@dimen/widget_size_26"
+                    android:layout_height="@dimen/widget_size_26"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_flash" />
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvInstruction2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layoutQuickSearch"
+        android:layout_marginTop="@dimen/widget_size_16"
+        android:background="@drawable/bg_picture_camera"
+        android:gravity="center"
+        android:backgroundTint="#80425953"
+        android:layout_marginHorizontal="@dimen/widget_size_37"
+        android:text="Take the picture of a math problem"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/font_size_14"
+        android:fontFamily="@font/montserrat_bold"/>
+
+    <TextView
+        android:id="@+id/tvLangSelected"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/widget_size_45"
+        android:visibility="gone"
+        android:layout_marginHorizontal="@dimen/widget_size_50"
+        android:layout_marginBottom="@dimen/widget_size_10"
+        android:layout_above="@+id/tabOptions"
+        android:gravity="center"
+        android:backgroundTint="#8005392C"
+        android:elevation="0dp"
+        android:background="@drawable/bg_picture_camera"
+        android:textColor="@color/white"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabOptions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottomControls"
+        android:layout_marginBottom="@dimen/widget_size_12"
+        android:background="@android:color/transparent"
+        app:tabGravity="center"
+        app:tabIndicatorColor="@android:color/white"
+        app:tabIndicatorHeight="3dp"
+        app:tabSelectedTextColor="@android:color/white"
+        app:tabTextColor="#87EDD4"
+        app:tabRippleColor="@android:color/transparent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomControls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingVertical="@dimen/widget_size_16">
+
+        <LinearLayout
+            android:id="@+id/layoutPicture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginEnd="@dimen/widget_size_24"
+            app:layout_constraintEnd_toStartOf="@id/btnCamera"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnPicture"
+                android:layout_width="@dimen/widget_size_50"
+                android:layout_height="@dimen/widget_size_50"
+                app:strokeWidth="0dp"
+                app:cardCornerRadius="@dimen/widget_size_25"
+                app:cardBackgroundColor="#4D05392C">
+
+                <ImageView
+                    android:id="@+id/imvPicture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_gallery" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Picture"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/font_size_12"
+                android:layout_marginTop="@dimen/widget_size_4"
+                android:fontFamily="@font/montserrat_bold" />
+        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btnCamera"
+            android:layout_width="@dimen/widget_size_76"
+            android:layout_height="@dimen/widget_size_76"
+            app:strokeWidth="1dp"
+            android:layout_marginBottom="@dimen/widget_size_30"
+            app:cardCornerRadius="@dimen/widget_size_50"
+            app:strokeColor="#15B28B"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imvCamera"
+                android:layout_width="@dimen/widget_size_40"
+                android:layout_height="@dimen/widget_size_40"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_scan_solve_camera" />
+        </com.google.android.material.card.MaterialCardView>
+        <LinearLayout
+            android:id="@+id/layoutMath"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginStart="@dimen/widget_size_24"
+            app:layout_constraintStart_toEndOf="@id/btnCamera"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnMath"
+                android:layout_width="@dimen/widget_size_50"
+                android:layout_height="@dimen/widget_size_50"
+                app:strokeWidth="0dp"
+                app:cardCornerRadius="@dimen/widget_size_25"
+                app:cardBackgroundColor="#4D05392C">
+
+                <ImageView
+                    android:id="@+id/imvMath"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_math" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Math"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/font_size_12"
+                android:layout_marginTop="@dimen/widget_size_4"
+                android:fontFamily="@font/montserrat_bold" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</RelativeLayout>
