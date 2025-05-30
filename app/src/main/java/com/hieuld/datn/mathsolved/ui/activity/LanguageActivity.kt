@@ -9,14 +9,13 @@ import com.hieuld.datn.mathsolved.data.enums.EnumSelectLanguage
 import com.hieuld.datn.mathsolved.databinding.ActivityLanguageBinding
 import com.hieuld.datn.mathsolved.respository.OnAdapterClick
 import com.hieuld.datn.mathsolved.ui.adapter.LanguageAdapter
-import com.hieuld.datn.mathsolved.ui.viewmodel.BottomSheetViewModel
 import com.hieuld.datn.mathsolved.ui.viewmodel.LanguageViewModel
 import com.hieuld.datn.mathsolved.utils.Constants
-import com.hieuld.datn.mathsolved.utils.openActivityAndClearApp
-import com.hieuld.datn.mathsolved.utils.show
 import com.hieuld.datn.mathsolved.utils.commons.utils.SLog
 import com.hieuld.datn.mathsolved.utils.commons.utils.hide
 import com.hieuld.datn.mathsolved.utils.commons.utils.setInVisible
+import com.hieuld.datn.mathsolved.utils.openActivityAndClearApp
+import com.hieuld.datn.mathsolved.utils.show
 
 class LanguageActivity :
     BaseActivity<BaseViewModel, ActivityLanguageBinding>(BaseViewModel::class) {
@@ -80,7 +79,6 @@ class LanguageActivity :
     private fun initViewClick() {
         if (!diFileComponent.sharedPreferenceUtils.is_tracking_first_open_language) {
             diFileComponent.sharedPreferenceUtils.is_tracking_first_open_language = true
-//            adr_first_open_language.postFirebaseEvent()
         }
 
         viewBinding.apply {
@@ -128,8 +126,6 @@ class LanguageActivity :
                     }, 3000)
 
 
-//                    loadAdsOnView()
-
                 }
 
             })
@@ -156,14 +152,6 @@ class LanguageActivity :
             if (!isFinishing) {
                 openActivityAndClearApp(OnboardingActivity::class.java)
                 finish()
-
-                /*if (diFileComponent.sharedPreferenceUtils.isSecondOpenApp) {
-                    openActivityAndClearApp(ActOnboarding::class.java)
-                    finish()
-                } else {
-                    openActivityAndClearApp(ActSelectLosePhone::class.java)
-                    finish()
-                }*/
             }
         } else {
             handler.postDelayed({
@@ -173,11 +161,8 @@ class LanguageActivity :
     }
 
     private fun reloadActivity(lang: String) {
-        SLog.d("sobu", "reloadActivity: lang: $lang")
         diFileComponent.sharedPreferenceUtils.selectedLanguageCode = lang
-//        viewBinding.headerTxt.setText(R.string.title_language)
 
-//        "$adr_select_language$lang".postFirebaseEvent()
     }
 
 

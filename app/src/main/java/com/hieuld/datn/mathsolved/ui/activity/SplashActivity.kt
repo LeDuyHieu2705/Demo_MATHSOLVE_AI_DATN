@@ -103,28 +103,6 @@ class SplashActivity : BaseActivity<BaseViewModel, ActivitySplashBinding>(BaseVi
         adAttemptRunnable = Runnable {
             attemptCount++
             if (attemptCount < maxAttempts && !diFileComponent.sharedPreferenceUtils.isAppPurchased) {
-                /*appOpen.loadAndShowOpenAdInSplash(this, object : OnLoadingCompleteAdsListener {
-                    override fun onLoadFail() {
-                        attemptCount++
-                        if (attemptCount >= 3) {
-                            if (!isShowingOpenAds && !isFinishing) {
-                                onNextToHomeScreen()
-                            }
-                        }
-                    }
-
-                    override fun isShowingAds() {
-                        isShowingOpenAds = true
-                        handler.removeCallbacks(adAttemptRunnable)
-                    }
-
-                    override fun onDismissOpenAd() {
-                        if (!isFinishing) {
-                            onNextToHomeScreen()
-                        }
-                    }
-
-                })*/
 
 
             } else {
@@ -132,7 +110,6 @@ class SplashActivity : BaseActivity<BaseViewModel, ActivitySplashBinding>(BaseVi
             }
         }
 
-        // Start the first ad attempt immediately
         handler.postDelayed(adAttemptRunnable, intervalLoadingTime)
 
 
@@ -168,24 +145,10 @@ class SplashActivity : BaseActivity<BaseViewModel, ActivitySplashBinding>(BaseVi
         if (isInternetConnected()) {
             onLoginGSM()
 
-            /*RunUtils.runInBackground {
-                GSMUtil.retryLoginGSM = 0
-                GSMUtil.login(
-                    this,
-                    getString(R.string.app_id_gsm),
-                    BuildConfig.DEBUG,
-                    BuildConfig.VERSION_NAME,
-                    null
-                )
-            }*/
         }
     }
 
     private fun onLoginGSM() {
-//        val appId = getString(R.string.app_id_gsm)
-//        val devicedId = Settings.Secure.getString(contentResolver, Settings.Secure.ANDROID_ID)
-//        val os = 1
-//        val version = BuildConfig.VERSION_NAME
 
     }
 

@@ -9,9 +9,7 @@ import com.hieuld.datn.mathsolved.databinding.ActivityMainBinding
 import com.hieuld.datn.mathsolved.ui.adapter.ViewPagerAdapter2
 import com.hieuld.datn.mathsolved.ui.fragment.CameraFragment
 import com.hieuld.datn.mathsolved.ui.fragment.SettingsFragment
-import com.hieuld.datn.mathsolved.utils.commons.utils.SLog
 import com.hieuld.datn.mathsolved.utils.commons.utils.setSafeOnClickListener
-import com.hieuld.datn.mathsolved.utils.commons.utils.setVisible
 
 class MainActivity : BaseActivity<BaseViewModel,ActivityMainBinding>(BaseViewModel::class) {
 
@@ -33,6 +31,7 @@ class MainActivity : BaseActivity<BaseViewModel,ActivityMainBinding>(BaseViewMod
     }
 
     override fun initView() {
+        diFileComponent.sharedPreferenceUtils.isSecondOpenApp = true
 
         viewBinding.apply {
             setupViewPager(viewPager2)

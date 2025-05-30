@@ -19,8 +19,8 @@ import com.hieuld.datn.mathsolved.databinding.ActivityChatBinding
 import com.hieuld.datn.mathsolved.ui.adapter.ChatAdapter
 import com.hieuld.datn.mathsolved.ui.message.Message
 import com.hieuld.datn.mathsolved.ui.viewmodel.NetworkViewModel
-import com.pixelcarrot.base64image.Base64Image
 import com.hieuld.datn.mathsolved.utils.commons.utils.SLog
+import com.pixelcarrot.base64image.Base64Image
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -96,7 +96,7 @@ class ChatActivity : BaseActivity<NetworkViewModel, ActivityChatBinding>(Network
             }
             recyclerViewMessages.layoutManager = layoutManager
 
-            chatAdapter = ChatAdapter(messages) { position ->
+            chatAdapter = ChatAdapter(messages) { position, _ ->
                 getAlternativeAnswer(position)
             }
             recyclerViewMessages.adapter = chatAdapter
@@ -246,13 +246,10 @@ class ChatActivity : BaseActivity<NetworkViewModel, ActivityChatBinding>(Network
         lifecycleScope.launch {
             viewModel.chatResponse.collect { response ->
                 if (response.isNotEmpty()) {
-                    // Fix: Kiểm tra xem có phải là update cho alternative answer không
                     if (lastAIMessagePosition != -1 && lastAIMessagePosition < messages.size &&
                         messages[lastAIMessagePosition].showLoading) {
-                        // Đây là response cho alternative answer
                         updateAIMessageAtPosition(lastAIMessagePosition, response)
                     } else {
-                        // Đây là response mới
                         addAIResponse(response)
                     }
 
@@ -304,7 +301,6 @@ class ChatActivity : BaseActivity<NetworkViewModel, ActivityChatBinding>(Network
                 isUser = true
             )
         )
-        // Fix: Không reset imageBase64 ở đây vì có thể cần dùng lại cho alternative answer
         chatAdapter.notifyItemInserted(messages.size - 1)
 
         if (messages.size == 1) {

@@ -6,6 +6,7 @@ import com.hieuld.datn.mathsolved.R
 import com.hieuld.datn.mathsolved.base.viewmodel.BaseViewModel
 import com.hieuld.datn.mathsolved.databinding.FragmentSettingsBinding
 import com.hieuld.datn.mathsolved.fragment.BaseFragment
+import com.hieuld.datn.mathsolved.ui.activity.FavouriteActivity
 import com.hieuld.datn.mathsolved.ui.activity.LanguageActivity
 import com.hieuld.datn.mathsolved.ui.dialog.RatingDialog
 import com.hieuld.datn.mathsolved.utils.Constants.Companion.FROM_MENU
@@ -32,9 +33,9 @@ class SettingsFragment : BaseFragment<BaseViewModel,FragmentSettingsBinding>(Bas
     }
 
     override fun initView() {
-        viewBinding.apply {
-            mathViewTest.text = "Để tìm tập nghiệm của phương trình bậc hai {x^2 + 3x - 1 = 0}, chúng ta có thể sử dụng công thức nghiệm của phương trình bậc hai: \\n\\n{x = (-b ± √(b² - 4ac)) / 2a}.\\n\\nTrong phương trình này, {a = 1}, {b = 3}, và {c = -1}. Chúng ta sẽ tính toán từng bước:\\n\\n1. Tính {b² - 4ac}:\\n{b² - 4ac = 3² - 4×1×(-1) = 9 + 4 = 13}.\\n\\n2. Áp dụng giá trị vào công thức:\\n{x = (-3 ± √(13)) / 2}.\\n\\nVậy, tập nghiệm của phương trình là:\\n{x_1 = (-3 + √(13)) / 2} và {x_2 = (-3 - √(13)) / 2}.\\n\\nHy vọng bạn thấy lời giải này hữu ích! Nếu có bất kỳ câu hỏi nào khác, đừng ngần ngại hỏi nhé!\n"
-        }
+//        viewBinding.apply {
+//            mathViewTest.text = "Để tìm tập nghiệm của phương trình bậc hai {x^2 + 3x - 1 = 0}, chúng ta có thể sử dụng công thức nghiệm của phương trình bậc hai: \\n\\n{x = (-b ± √(b² - 4ac)) / 2a}.\\n\\nTrong phương trình này, {a = 1}, {b = 3}, và {c = -1}. Chúng ta sẽ tính toán từng bước:\\n\\n1. Tính {b² - 4ac}:\\n{b² - 4ac = 3² - 4×1×(-1) = 9 + 4 = 13}.\\n\\n2. Áp dụng giá trị vào công thức:\\n{x = (-3 ± √(13)) / 2}.\\n\\nVậy, tập nghiệm của phương trình là:\\n{x_1 = (-3 + √(13)) / 2} và {x_2 = (-3 - √(13)) / 2}.\\n\\nHy vọng bạn thấy lời giải này hữu ích! Nếu có bất kỳ câu hỏi nào khác, đừng ngần ngại hỏi nhé!\n"
+//        }
     }
 
 
@@ -59,6 +60,10 @@ class SettingsFragment : BaseFragment<BaseViewModel,FragmentSettingsBinding>(Bas
             }
             BtnPrivacy.clickOnce {
                 requireContext().openPrivacy(null)
+            }
+            BtnFavourite.clickOnce {
+                requireContext().openActivity(FavouriteActivity::class.java)
+
             }
         }
     }
