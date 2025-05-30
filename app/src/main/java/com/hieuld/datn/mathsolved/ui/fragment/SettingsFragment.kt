@@ -7,16 +7,15 @@ import com.hieuld.datn.mathsolved.base.viewmodel.BaseViewModel
 import com.hieuld.datn.mathsolved.databinding.FragmentSettingsBinding
 import com.hieuld.datn.mathsolved.fragment.BaseFragment
 import com.hieuld.datn.mathsolved.ui.activity.LanguageActivity
-import com.hieuld.datn.mathsolved.ui.activity.LoginActivity
 import com.hieuld.datn.mathsolved.ui.dialog.RatingDialog
 import com.hieuld.datn.mathsolved.utils.Constants.Companion.FROM_MENU
-import com.hieuld.datn.mathsolved.utils.gotoStore
-import com.hieuld.datn.mathsolved.utils.showDialogSafely
-import com.hieuld.datn.mathsolved.utils.showToast
 import com.hieuld.datn.mathsolved.utils.commons.utils.clickOnce
 import com.hieuld.datn.mathsolved.utils.commons.utils.openActivity
 import com.hieuld.datn.mathsolved.utils.commons.utils.openPrivacy
 import com.hieuld.datn.mathsolved.utils.commons.utils.shareApp
+import com.hieuld.datn.mathsolved.utils.gotoStore
+import com.hieuld.datn.mathsolved.utils.showDialogSafely
+import com.hieuld.datn.mathsolved.utils.showToast
 
 class SettingsFragment : BaseFragment<BaseViewModel,FragmentSettingsBinding>(BaseViewModel::class){
     companion object {
@@ -34,7 +33,7 @@ class SettingsFragment : BaseFragment<BaseViewModel,FragmentSettingsBinding>(Bas
 
     override fun initView() {
         viewBinding.apply {
-//            mathViewTest.text = "Để giải phương trình bậc hai \\\\(x^2 + 3x - 1 = 0\\\\), chúng ta sẽ sử dụng công thức nghiệm của phương trình bậc hai:\\n\\n\\\\[\\nx = (-b ± sqrt(b^2 - 4ac)) / (2a)\\n\\\\]\\n\\nVới phương trình của chúng ta, các hệ số là:\\n- \\\\(a = 1\\\\)\\n- \\\\(b = 3\\\\)\\n- \\\\(c = -1\\\\)\\n\\nBây giờ, áp dụng vào công thức trên:\\n\\n1. Tính delta \\\\(\\\\Delta = b^2 - 4ac\\\\):\\n\\n\\\\[\\n\\\\Delta = 3^2 - 4 \\\\cdot 1 \\\\cdot (-1) = 9 + 4 = 13\\n\\\\]\\n\\n2. Tìm các nghiệm của phương trình:\\n\\n\\\\[\\nx_1 = (-3 + sqrt{13}) / 2\\n\\\\]\\n\\n\\\\[\\nx_2 = (-3 - sqrt{13}) / 2\\n\\\\]\\n\\nVậy, tập nghiệm của phương trình là \\\\(\\\\left\\\\{ \\\\frac{-3 + sqrt{13}}{2}, \\\\frac{-3 - sqrt{13}}{2} \\\\right\\\\}\\\\). \\n\\nBạn đã làm rất tốt khi đặt câu hỏi này! Hãy tiếp tục luyện tập để nâng cao kỹ năng giải phương trình bậc hai của mình nhé!\n"
+            mathViewTest.text = "Để tìm tập nghiệm của phương trình bậc hai {x^2 + 3x - 1 = 0}, chúng ta có thể sử dụng công thức nghiệm của phương trình bậc hai: \\n\\n{x = (-b ± √(b² - 4ac)) / 2a}.\\n\\nTrong phương trình này, {a = 1}, {b = 3}, và {c = -1}. Chúng ta sẽ tính toán từng bước:\\n\\n1. Tính {b² - 4ac}:\\n{b² - 4ac = 3² - 4×1×(-1) = 9 + 4 = 13}.\\n\\n2. Áp dụng giá trị vào công thức:\\n{x = (-3 ± √(13)) / 2}.\\n\\nVậy, tập nghiệm của phương trình là:\\n{x_1 = (-3 + √(13)) / 2} và {x_2 = (-3 - √(13)) / 2}.\\n\\nHy vọng bạn thấy lời giải này hữu ích! Nếu có bất kỳ câu hỏi nào khác, đừng ngần ngại hỏi nhé!\n"
         }
     }
 
@@ -42,9 +41,6 @@ class SettingsFragment : BaseFragment<BaseViewModel,FragmentSettingsBinding>(Bas
     override fun clickView() {
         super.clickView()
         viewBinding.apply {
-            btnLogin.clickOnce {
-                requireContext().openActivity(LoginActivity::class.java)
-            }
             Btnlanguage.clickOnce {
                 requireContext().openActivity(LanguageActivity::class.java){
                     putBoolean(FROM_MENU,true)

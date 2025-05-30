@@ -1,5 +1,8 @@
 package com.hieuld.datn.mathsolved.ui.adapter
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,9 +10,11 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.card.MaterialCardView
 import com.hieuld.datn.mathsolved.R
+import com.hieuld.datn.mathsolved.ui.message.Message
 import com.pixelcarrot.base64image.Base64Image
 import com.hieuld.datn.mathsolved.utils.commons.utils.SLog
 import com.hieuld.datn.mathsolved.utils.commons.utils.hide
@@ -81,8 +86,8 @@ class ChatAdapter(
         private val chatDolphin: LinearLayout? = itemView.findViewById(R.id.chatDolphin)
         private val vOther: View? = itemView.findViewById(R.id.vOther)
         private val btnOtherAnswer: MaterialCardView = itemView.findViewById(R.id.btnOtherAnswer)
+        private val btnCopy: MaterialCardView = itemView.findViewById(R.id.BtnCopy)
 
-        // Thêm loading components
         private val loadingContainer: LinearLayout? = itemView.findViewById(R.id.loadingContainer)
         private val progressBar: ProgressBar? = itemView.findViewById(R.id.progressBar)
         private val tvLoadingText: TextView? = itemView.findViewById(R.id.tvLoadingText)
@@ -106,14 +111,31 @@ class ChatAdapter(
                     onDeleteClick?.invoke(position)
                 }
             }
+
+            btnCopy.setOnClickListener {
+                if (!message.showLoading && message.content.isNotEmpty()) {
+                    copyText(itemView.context, message.content)
+                }
+            }
+        }
+
+        private fun copyText(context: Context, text: String) {
+            try {
+                val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+                val clip = ClipData.newPlainText("AI Response", text)
+                clipboard.setPrimaryClip(clip)
+
+                Toast.makeText(context, "Đã sao chép câu trả lời", Toast.LENGTH_SHORT).show()
+            } catch (e: Exception) {
+                SLog.d("Error copying to clipboard: ${e.message}")
+                Toast.makeText(context, "Lỗi khi sao chép", Toast.LENGTH_SHORT).show()
+            }
         }
 
         private fun showLoadingState(loadingText: String) {
-            // Ẩn content views
             tvAIMessage.hide()
             mathView2.hide()
 
-            // Hiển thị loading views
             loadingContainer?.show()
             progressBar?.show()
             if (loadingContainer == null) {
@@ -132,7 +154,6 @@ class ChatAdapter(
             loadingContainer?.hide()
             progressBar?.hide()
             tvLoadingText?.hide()
-
 
             mathView2.apply {
                 show()

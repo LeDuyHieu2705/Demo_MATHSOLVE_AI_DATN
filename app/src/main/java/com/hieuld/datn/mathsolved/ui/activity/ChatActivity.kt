@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.hieuld.datn.mathsolved.base.activity.BaseActivity
 import com.hieuld.datn.mathsolved.databinding.ActivityChatBinding
 import com.hieuld.datn.mathsolved.ui.adapter.ChatAdapter
-import com.hieuld.datn.mathsolved.ui.adapter.Message
+import com.hieuld.datn.mathsolved.ui.message.Message
 import com.hieuld.datn.mathsolved.ui.viewmodel.NetworkViewModel
 import com.pixelcarrot.base64image.Base64Image
 import com.hieuld.datn.mathsolved.utils.commons.utils.SLog

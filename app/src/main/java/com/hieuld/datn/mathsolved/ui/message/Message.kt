@@ -1,4 +1,4 @@
-package com.hieuld.datn.mathsolved.ui.adapter
+package com.hieuld.datn.mathsolved.ui.message
 
 
 

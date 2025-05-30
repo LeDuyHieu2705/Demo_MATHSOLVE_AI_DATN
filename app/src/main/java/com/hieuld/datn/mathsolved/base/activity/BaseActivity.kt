@@ -32,10 +32,8 @@ abstract class BaseActivity<viewModel : BaseViewModel, viewBinding : ViewBinding
 
     lateinit var gson: Gson
 
-    // Create a Handler associated with the current Looper
     val handler = Handler(Looper.myLooper() ?: Looper.getMainLooper())
 
-//    protected lateinit var progressDialog: DialogLoadingApp
 
     protected lateinit var viewBinding: viewBinding
     abstract fun inflateViewBinding(inflater: LayoutInflater): viewBinding
@@ -64,7 +62,6 @@ abstract class BaseActivity<viewModel : BaseViewModel, viewBinding : ViewBinding
 
     override fun onResume() {
         super.onResume()
-//        hideNavigationBar()
 
     }
 
@@ -89,29 +86,11 @@ abstract class BaseActivity<viewModel : BaseViewModel, viewBinding : ViewBinding
 
 
     fun showLoading() {
-//        try {
-//            val tag = DialogLoadingApp::class.java.simpleName
-//            val existingFragment = supportFragmentManager.findFragmentByTag(tag)
-//            if (existingFragment == null || !existingFragment.isAdded) {
-//                progressDialog = DialogLoadingApp.newInstance()
-//                progressDialog.show(supportFragmentManager, tag)
-//            }
-//        } catch (e: Exception) {
-//            e.printStackTrace()
-//        }
+
     }
 
-    // Ẩn DialogLoading nếu đang hiển thị
     fun hideLoading() {
-//        try {
-//            val tag = DialogLoadingApp::class.java.simpleName
-//            val existingFragment = supportFragmentManager.findFragmentByTag(tag)
-//            if (existingFragment != null && existingFragment is DialogFragment) {
-//                existingFragment.dismiss()
-//            }
-//        } catch (e: Exception) {
-//            e.printStackTrace()
-//        }
     }
+
 
 }
