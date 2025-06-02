@@ -177,7 +177,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/widget_size_4"
                 android:fontFamily="@font/montserrat_bold"
-                android:text="Picture"
+                android:text="@string/picture"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/font_size_12" />
         </LinearLayout>

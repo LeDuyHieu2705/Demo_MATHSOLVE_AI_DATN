@@ -165,7 +165,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/widget_size_4"
                     android:fontFamily="@font/montserrat_medium"
-                    android:text="Settings"
+                    android:text="@string/txt_settings"
                     android:layout_gravity="center"
                     android:textColor="#939191"
                     android:textSize="@dimen/font_size_12" />

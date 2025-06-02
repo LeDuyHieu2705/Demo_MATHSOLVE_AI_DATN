@@ -57,7 +57,7 @@
                 android:layout_marginHorizontal="24dp"
                 android:layout_marginBottom="80dp"
                 android:background="@drawable/bg_onboarding"
-                android:text="Next"
+                android:text="@string/txt_next"
                 android:fontFamily="@font/montserrat_bold"
                 android:textColor="@color/white"
                 android:textSize="16sp"

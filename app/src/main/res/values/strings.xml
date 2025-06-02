@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">MathSolved</string>
-
+    <string name="app_name_2">MathSolve &amp; Solve AI</string>
 
     <string name="file_does_not_exist">File does not exist</string>
     <string name="set_as_ringtone">Set as ringtone</string>
@@ -54,4 +54,42 @@
     <string name="share_to">Share to:</string>
     <string name="mes_send_email_using">hi</string>
     <string name="mes_no_email_clients_installed">hi</string>
+
+
+    <string name="quick_search">Quick search</string>
+    <string name="take_the_picture_of_a_math_problem">Take the picture of a math problem</string>
+    <string name="picture">Picture</string>
+    <string name="math">Math</string>
+    <string name="txt_math_problem">Just snap your Math problem</string>
+    <string name="txt_and_get_a_step_by_step_solution_quickly">and get a step-by-step solution quickly!</string>
+    <string name="txt_discover_smart_answers">Discover smart answers</string>
+    <string name="txt_for_all_subjects_from_science_to_history_and_more">for all subjects - from Science to History and more!</string>
+    <string name="txt_you_smart_study_assistant">You smart study assistant</string>
+    <string name="txt_here_to_support_you_anytime_anywhere">here to support you anytime, anywhere!</string>
+    <string name="txt_guest">Guest</string>
+    <string name="txt_middle_school">Middle school</string>
+    <string name="txt_log_in_sign_up">Log in/Sign up</string>
+    <string name="txt_upgrade_to_exceed_95_accuracy">Upgrade to exceed 95% accuracy</string>
+    <string name="txt_upgrade">Upgrade</string>
+    <string name="txt_favourite">Favourite</string>
+    <string name="txt_clear_history">Clear history</string>
+    <string name="txt_rate_app">Rate app</string>
+    <string name="txt_share_app">Share app</string>
+    <string name="txt_privacy">Privacy</string>
+    <string name="txt_more_app">More app</string>
+    <string name="txt_version">Version</string>
+    <string name="txt_advisor_ai">Advisor AI</string>
+    <string name="txt_write_your_message_here">Write your message here</string>
+    <string name="txt_delete_all">Delete All</string>
+    <string name="txt_log_in_for_full_access">Log in for full access</string>
+    <string name="txt_delete_account_anytime">Delete account anytime</string>
+    <string name="txt_continue_with_google">Continue with Google</string>
+    <string name="txt_continue_with_email">Continue with Email</string>
+    <string name="txt_settings">Settings</string>
+    <string name="txt_translate_to">Translate to</string>
+    <string name="txt_ai_support_anytime">AI support anytime</string>
+    <string name="txt_other_answer">Other answer</string>
+    <string name="txt_loading">Loading...</string>
+    <string name="txt_next">Next</string>
+    <string name="txt_ai_assistant">AI Assistant</string>
 </resources>

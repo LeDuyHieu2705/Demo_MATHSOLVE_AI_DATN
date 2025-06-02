@@ -1,0 +1,94 @@
+<resources>
+    <string name="app_name">Công Cụ Giải Toán</string>
+    <string name="app_name_2">Giải Toán &amp; Giải Bài bằng AI </string>
+
+    <string name="file_does_not_exist">Tệp tin không tồn tại</string>
+    <string name="set_as_ringtone">Đặt làm nhạc chuông</string>
+    <string name="cannot_set_ringtone">Không thể đặt nhạc chuông</string>
+    <string name="please_grant_system_edit_permission_to_set_alarm">Vui lòng cấp quyền hệ thống để đặt báo thức</string>
+    <string name="unable_to_access_mediastore">Không thể truy cập tệp phương tiện trên thiết bị</string>
+    <string name="set_as_alarm">Đặt làm báo thức</string>
+    <string name="cannot_set_as_alarm">Không thể đặt làm báo thức</string>
+    <string name="error_setting_as_alarm">Lỗi khi đặt làm báo thức</string>
+    <string name="share_audio_via">Chia sẻ âm thanh qua</string>
+    #
+    <string name="this_action_may_contain_advertising">Hành động này có thể chứa quảng cáo</string>
+    <string name="txt_after">Sau khi bật lên, nhấn nút tìm kiếm để chụp màn hình và giải quyết các câu hỏi khi cần</string>
+    <string name="txt_start"><![CDATA[Bắt đầu ghi hình/phát trực tiếp với Math & SolverAI]]></string>
+    #
+    <string name="title_language">Ngôn ngữ</string>
+    <string name="txt_language">Ngôn ngữ</string>
+
+    #
+    <string name="txt_english" translatable="false">Tiếng Anh</string>
+    <string name="txt_france" translatable="false">Tiếng Pháp</string>
+    <string name="txt_german" translatable="false">Tiếng Đức</string>
+    <string name="txt_hindi" translatable="false">Tiếng Hindi</string>
+    <string name="txt_spanish" translatable="false">Tiếng Tây Ban Nha</string>
+    <string name="txt_portugal" translatable="false">Tiếng Bồ Đào Nha</string>
+    <string name="txt_vietnamese" translatable="false">Tiếng Việt</string>
+    <string name="txt_china" translatable="false">Tiếng Trung</string>
+    <string name="txt_russia" translatable="false">Tiếng Nga</string>
+    <string name="txt_korea" translatable="false">Tiếng Hàn</string>
+    <string name="txt_indo" translatable="false">Tiếng Indonesia</string>
+    <string name="txt_japan" translatable="false">Tiếng Nhật</string>
+    <string name="txt_phi" translatable="false">Tiếng Philippines</string>
+    <string name="txt_italy" translatable="false">Tiếng Ý</string>
+
+
+    #
+    <string name="latest_version">Phiên bản mới nhất</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Xin chào blank fragment</string>
+    <string name="txt_remove_ads"><p><font color="#251B01">Đừng để quảng cáo làm phiền trải nghiệm của bạn, hãy mua gói VIP để </font></p><b><font color="#F9E854">Xóa quảng cáo vĩnh viễn</font></b></string>
+    <string name="txt_math_solve_ai_vip"><![CDATA[Math & Solve AI VIP]]></string>
+    <string name="pick_image_chooser_title">Chọn nguồn</string>
+    <string name="txt_about"><![CDATA[Math&Solver giúp việc học trở nên dễ dàng hơn với các công cụ giải toán, hỗ trợ môn học, dịch thuật và kiểm tra ngữ pháp — tất cả trong một ứng dụng.]]></string>
+    <string name="txt_tools_scan"><![CDATA[Quét & giải]]></string>
+
+
+
+    <string name="txt_sub_math">Toán</string>
+    <string name="txt_sub_check_grammar">Kiểm tra ngữ pháp</string>
+    <string name="txt_sub_translate">Dịch</string>
+    <string name="share_to">Chia sẻ tới:</string>
+    <string name="mes_send_email_using">Gửi email bằng</string>
+    <string name="mes_no_email_clients_installed">Không có ứng dụng email nào được cài đặt</string>
+    <string name="quick_search">Tìm kiếm nhanh</string>
+    <string name="take_the_picture_of_a_math_problem">Chụp ảnh bài toán</string>
+    <string name="picture">Ảnh</string>
+    <string name="math">Toán</string>
+    <string name="txt_math_problem">Chỉ cần chụp bài toán của bạn</string>
+    <string name="txt_and_get_a_step_by_step_solution_quickly">và nhận lời giải từng bước một cách nhanh chóng!</string>
+    <string name="txt_discover_smart_answers">Khám phá câu trả lời thông minh</string>
+    <string name="txt_for_all_subjects_from_science_to_history_and_more">cho mọi môn học - từ Khoa học đến Lịch sử và hơn thế nữa!</string>
+    <string name="txt_you_smart_study_assistant">Trợ lý học tập thông minh của bạn</string>
+    <string name="txt_here_to_support_you_anytime_anywhere">sẵn sàng hỗ trợ bạn mọi lúc, mọi nơi!</string>
+    <string name="txt_guest">Khách</string>
+    <string name="txt_middle_school">Trung học cơ sở</string>
+    <string name="txt_log_in_sign_up">Đăng nhập/Đăng ký</string>
+    <string name="txt_upgrade_to_exceed_95_accuracy">Nâng cấp để đạt độ chính xác trên 95%</string>
+    <string name="txt_upgrade">Nâng cấp</string>
+    <string name="txt_favourite">Yêu thích</string>
+    <string name="txt_clear_history">Xóa lịch sử</string>
+    <string name="txt_rate_app">Đánh giá ứng dụng</string>
+    <string name="txt_share_app">Chia sẻ ứng dụng</string>
+    <string name="txt_privacy">Quyền riêng tư</string>
+    <string name="txt_more_app">Thêm ứng dụng</string>
+    <string name="txt_version">Phiên bản</string>
+    <string name="txt_advisor_ai">Trợ lý AI</string>
+    <string name="txt_write_your_message_here">Nhập tin nhắn của bạn tại đây</string>
+    <string name="txt_delete_all">Xóa tất cả</string>
+    <string name="txt_log_in_for_full_access">Đăng nhập để sử dụng đầy đủ tính năng</string>
+    <string name="txt_delete_account_anytime">Xóa tài khoản bất kỳ lúc nào</string>
+    <string name="txt_continue_with_google">Tiếp tục với Google</string>
+    <string name="txt_continue_with_email">Tiếp tục với Email</string>
+    <string name="txt_settings">Cài đặt</string>
+    <string name="txt_translate_to">Dịch sang</string>
+    <string name="txt_ai_support_anytime">AI hỗ trợ mọi lúc</string>
+    <string name="txt_other_answer">Câu trả lời khác</string>
+    <string name="txt_loading">Đang tải...</string>
+    <string name="txt_next">Tiếp theo</string>
+    <string name="txt_ai_assistant">Trợ lý AI</string>
+
+</resources>

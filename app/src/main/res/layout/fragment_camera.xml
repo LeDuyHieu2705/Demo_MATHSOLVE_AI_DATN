@@ -37,6 +37,7 @@
         tools:layout_editor_absoluteY="0dp" />
 
     <LinearLayout
+        android:visibility="gone"
         android:id="@+id/layoutQuickSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -64,7 +65,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Quick search"
+                android:text="@string/quick_search"
                 android:gravity="start"
                 android:maxLines="1"
                 android:textColor="#15B28B"
@@ -118,12 +119,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/layoutQuickSearch"
-        android:layout_marginTop="@dimen/widget_size_16"
+        android:layout_marginTop="@dimen/widget_size_40"
         android:background="@drawable/bg_picture_camera"
         android:gravity="center"
         android:backgroundTint="#80425953"
         android:layout_marginHorizontal="@dimen/widget_size_37"
-        android:text="Take the picture of a math problem"
+        android:text="@string/take_the_picture_of_a_math_problem"
         android:textColor="@android:color/white"
         android:textSize="@dimen/font_size_14"
         android:fontFamily="@font/montserrat_bold"/>
@@ -195,7 +196,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Picture"
+                android:text="@string/picture"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/font_size_12"
                 android:layout_marginTop="@dimen/widget_size_4"
@@ -253,7 +254,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Math"
+                android:text="@string/math"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/font_size_12"
                 android:layout_marginTop="@dimen/widget_size_4"

@@ -50,7 +50,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/montserrat_bold"
                 android:gravity="center"
-                android:text="Advisor AI"
+                android:text="@string/txt_advisor_ai"
                 android:textColor="@color/black"
                 android:textSize="@dimen/font_size_16" />
 
@@ -135,7 +135,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/bg_edittext_rounded"
-                android:hint="Write your message here"
+                android:hint="@string/txt_write_your_message_here"
                 android:inputType="textMultiLine"
                 android:maxLines="4"
                 android:minHeight="40dp"

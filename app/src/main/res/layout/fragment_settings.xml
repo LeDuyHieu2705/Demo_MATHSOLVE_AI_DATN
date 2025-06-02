@@ -58,7 +58,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/montserrat_bold"
-                        android:text="Guest"
+                        android:text="@string/txt_guest"
                         android:textColor="#032C22"
                         android:textSize="@dimen/font_size_14" />
 
@@ -73,7 +73,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/montserrat_medium"
-                            android:text="Middle school"
+                            android:text="@string/txt_middle_school"
                             android:textColor="#506560"
                             android:textSize="@dimen/font_size_14" />
 
@@ -93,7 +93,7 @@
                     android:background="@drawable/bg_gradient_conner_20"
                     android:fontFamily="@font/montserrat_semi_bold"
                     android:gravity="center"
-                    android:text="Log in/Sign up"
+                    android:text="@string/txt_log_in_sign_up"
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/font_size_12" />
 
@@ -134,8 +134,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/widget_size_4"
-                    android:text="Upgrade to exceed 95% accuracy"
+                    android:text="@string/txt_upgrade_to_exceed_95_accuracy"
                     android:textColor="#667B75"
                     android:textSize="@dimen/font_size_10" />
             </LinearLayout>
@@ -147,7 +146,7 @@
                 android:background="@drawable/bg_update"
                 android:fontFamily="@font/montserrat_semi_bold"
                 android:gravity="center"
-                android:text="Upgrade"
+                android:text="@string/txt_upgrade"
                 android:textColor="#ffffff"
                 android:textSize="@dimen/font_size_12" />
         </LinearLayout>
@@ -213,7 +212,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/widget_size_20"
                         android:fontFamily="@font/montserrat_medium"
-                        android:text="Favourite"
+                        android:text="@string/txt_favourite"
                         android:textColor="@color/text_primary"
                         android:textSize="@dimen/font_size_14" />
 
@@ -257,7 +256,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/widget_size_20"
                         android:fontFamily="@font/montserrat_medium"
-                        android:text="Quick Search"
+                        android:text="@string/quick_search"
                         android:textColor="@color/text_primary"
                         android:textSize="@dimen/font_size_14" />
 
@@ -300,7 +299,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/widget_size_20"
                         android:fontFamily="@font/montserrat_medium"
-                        android:text="Clear history"
+                        android:text="@string/txt_clear_history"
                         android:textColor="@color/text_primary"
                         android:textSize="@dimen/font_size_14" />
 
@@ -386,7 +385,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/widget_size_20"
                         android:fontFamily="@font/montserrat_medium"
-                        android:text="Rate app"
+                        android:text="@string/txt_rate_app"
                         android:textColor="@color/text_primary"
                         android:textSize="@dimen/font_size_14" />
 
@@ -430,7 +429,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/widget_size_20"
                         android:fontFamily="@font/montserrat_medium"
-                        android:text="Share app"
+                        android:text="@string/txt_share_app"
                         android:textColor="@color/text_primary"
                         android:textSize="@dimen/font_size_14" />
 
@@ -474,7 +473,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/widget_size_20"
                         android:fontFamily="@font/montserrat_medium"
-                        android:text="Privacy"
+                        android:text="@string/txt_privacy"
                         android:textColor="@color/text_primary"
                         android:textSize="@dimen/font_size_14" />
 
@@ -518,7 +517,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/widget_size_20"
                         android:fontFamily="@font/montserrat_medium"
-                        android:text="More app"
+                        android:text="@string/txt_more_app"
                         android:textColor="@color/text_primary"
                         android:textSize="@dimen/font_size_14" />
 
@@ -559,7 +558,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/widget_size_20"
                         android:fontFamily="@font/montserrat_medium"
-                        android:text="Version"
+                        android:text="@string/txt_version"
                         android:textColor="@color/text_primary"
                         android:textSize="@dimen/font_size_14" />
 

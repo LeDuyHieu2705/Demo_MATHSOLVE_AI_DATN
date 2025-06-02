@@ -16,14 +16,14 @@ import com.hieuld.datn.mathsolved.fragment.BaseFragment
 import com.hieuld.datn.mathsolved.ui.activity.CropImageActivity
 import com.hieuld.datn.mathsolved.ui.dialog.BottomSheetSelectLanguage
 import com.hieuld.datn.mathsolved.utils.Constants.Companion.TYPE_SUBJECT_SELECTED
-import com.otaliastudios.cameraview.CameraListener
-import com.otaliastudios.cameraview.PictureResult
-import com.otaliastudios.cameraview.controls.Flash
 import com.hieuld.datn.mathsolved.utils.commons.utils.SLog
 import com.hieuld.datn.mathsolved.utils.commons.utils.clickOnce
 import com.hieuld.datn.mathsolved.utils.commons.utils.hide
 import com.hieuld.datn.mathsolved.utils.commons.utils.openActivity
 import com.hieuld.datn.mathsolved.utils.commons.utils.show
+import com.otaliastudios.cameraview.CameraListener
+import com.otaliastudios.cameraview.PictureResult
+import com.otaliastudios.cameraview.controls.Flash
 import java.io.FileNotFoundException
 
 class CameraFragment : BaseFragment<BaseViewModel,FragmentCameraBinding>(BaseViewModel::class){
@@ -104,8 +104,8 @@ class CameraFragment : BaseFragment<BaseViewModel,FragmentCameraBinding>(BaseVie
 
             // Add tabs with proper titles
             addTab(newTab().setText(getString(EnumSubject.MATH.nameSub)))
-            addTab(newTab().setText(getString(EnumSubject.CHECK_GRAMMAR.nameSub)))
-            addTab(newTab().setText(getString(EnumSubject.TRANSLATE.nameSub)))
+//            addTab(newTab().setText(getString(EnumSubject.CHECK_GRAMMAR.nameSub)))
+//            addTab(newTab().setText(getString(EnumSubject.TRANSLATE.nameSub)))
 
             // Set default selected tab
             selectTab(getTabAt(0))

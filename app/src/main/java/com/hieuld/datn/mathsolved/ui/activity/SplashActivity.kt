@@ -47,7 +47,7 @@ class SplashActivity : BaseActivity<BaseViewModel, ActivitySplashBinding>(BaseVi
 
         diFileComponent.sharedPreferenceUtils.isAppPurchased = true
 
-        viewBinding.textView.text = getString(R.string.app_name)
+        viewBinding.textView.text = getString(R.string.app_name_2)
 
 
         handler.postDelayed({

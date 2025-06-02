@@ -46,7 +46,7 @@
                 android:id="@+id/tvLoadingText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Loading..."
+                android:text="@string/txt_loading"
                 android:textColor="#666666"
                 android:textSize="14sp" />
         </LinearLayout>
@@ -149,7 +149,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Other answer"
+                    android:text="@string/txt_other_answer"
                     android:textSize="@dimen/font_size_12" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
