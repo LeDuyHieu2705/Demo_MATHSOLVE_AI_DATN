@@ -1,7 +1,6 @@
 package com.hieuld.datn.mathsolved.ui.viewmodel
 
 import android.util.Log
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.hieuld.datn.mathsolved.base.viewmodel.BaseViewModel
 import com.hieuld.datn.mathsolved.data.models.ResDataUser
@@ -61,7 +60,7 @@ class NetworkViewModel : BaseViewModel() {
 
         val req = ResDataUser(
             image = imageBase64,
-            language = "vi",
+            language = diFileComponent.sharedPreferenceUtils.selectedLanguageCode,
             message = "Giải phương trình", // default nội dung
             param1 = "1",
             param2 = "1",
@@ -92,7 +91,7 @@ class NetworkViewModel : BaseViewModel() {
 
         val req = ResDataUser(
             image = "", // không gửi ảnh
-            language = "vi",
+            language = diFileComponent.sharedPreferenceUtils.selectedLanguageCode,
             message = userMessage,
             param1 = "1",
             param2 = "1",

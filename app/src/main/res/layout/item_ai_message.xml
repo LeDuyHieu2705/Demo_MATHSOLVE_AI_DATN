@@ -14,7 +14,8 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="WebViewLayout">
 
         <ImageView
             android:id="@+id/ivDolphin"
@@ -51,28 +52,22 @@
                 android:textSize="14sp" />
         </LinearLayout>
 
-        <!-- Normal Content Views -->
-        <TextView
-            android:id="@+id/tvAIMessage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:maxWidth="280dp"
-            android:padding="12dp"
-            android:text="AI message with dolphin icon"
-            android:textColor="@color/black"
-            android:visibility="gone"
-            app:layout_constraintStart_toEndOf="@+id/ivDolphin"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <com.zanvent.mathview.MathView
+        <!--<com.zanvent.mathview.MathView
             android:id="@+id/mathView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
 
             android:layout_marginStart="8dp"
-            android:visibility="visible" />
+            android:visibility="visible" />-->
+
+
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
     </LinearLayout>
 
     <LinearLayout

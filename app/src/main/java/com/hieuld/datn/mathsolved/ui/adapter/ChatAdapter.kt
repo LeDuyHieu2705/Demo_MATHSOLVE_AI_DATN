@@ -7,6 +7,7 @@ import android.content.res.ColorStateList
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebView
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.ProgressBar
@@ -22,12 +23,10 @@ import com.hieuld.datn.mathsolved.utils.commons.utils.SLog
 import com.hieuld.datn.mathsolved.utils.commons.utils.hide
 import com.hieuld.datn.mathsolved.utils.commons.utils.show
 import com.pixelcarrot.base64image.Base64Image
-import com.zanvent.mathview.MathView
 
 class ChatAdapter(
     private val messages: MutableList<Message>,
-    private val onDeleteClick: ((Int) -> Unit)? = null,
-    private val onFavouriteClick: ((Int, Boolean) -> Unit)? = null
+    private val onDeleteClick: ((Int) -> Unit)? = null
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     companion object {
@@ -85,14 +84,59 @@ class ChatAdapter(
     }
 
     inner class AIMessageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val tvAIMessage: TextView = itemView.findViewById(R.id.tvAIMessage)
-        private val mathView2: MathView = itemView.findViewById(R.id.mathView2)
+
+
+        private val htmlTemplate = "<!DOCTYPE html>" +
+                "<html>" +
+                "<head>" +
+                "<meta charset='utf-8'>" +
+                "<style>" +
+                "body { font-family: sans-serif; padding: 16px; }" +
+                ".MathJax_Display { text-align: center; margin: 1em 0; }" +
+                "</style>" +  // 1. Cấu hình MathJax PHẢI trước khi load script
+                "<script type='text/javascript'>" +
+                "window.MathJax = {" +
+                "  tex: {" +
+                "    inlineMath: [['$', '$'], ['\\\\(', '\\\\)']]," +
+                "    displayMath: [['$$', '$$'], ['\\\\[', '\\\\]']]," +
+                "    packages: ['base', 'mhchem']" +
+                "  }," +
+                "  loader: { load: ['[tex]/mhchem'] }," +
+                "  startup: {" +
+                "    ready: function() {" +
+                "      console.log('MathJax ready');" +
+                "      MathJax.startup.defaultReady();" +
+                "    }" +
+                "  }" +
+                "};" +
+                "</script>" +  // 2. Tải MathJax và Marked
+                "<script src='file:///android_asset/marked.min.js'></script>" +
+                "<script src='file:///android_asset/mathjax/es5/tex-chtml.js'></script>" +
+                "</head>" +
+                "<body>" +
+                "<div id='content'></div>" +
+                "<script>" +
+                "const rawMd = `%s`;" +
+                "document.getElementById('content').innerHTML = marked.parse(rawMd);" +
+                "window.MathJax && MathJax.typeset && MathJax.typeset();" +
+                "</script>" +
+                "</body>" +
+                "</html>"
+
+
+
+//        private val mathView2: MathView = itemView.findViewById(R.id.mathView2)
+        private val webview: WebView = itemView.findViewById(R.id.webView)
+
+
+
         private val chatDolphin: LinearLayout? = itemView.findViewById(R.id.chatDolphin)
         private val vOther: View? = itemView.findViewById(R.id.vOther)
         private val btnOtherAnswer: MaterialCardView = itemView.findViewById(R.id.btnOtherAnswer)
         private val btnCopy: MaterialCardView = itemView.findViewById(R.id.BtnCopy)
-        private val btnFavourite: MaterialCardView = itemView.findViewById(R.id.BtnFavourite) // Thêm favourite button
+        private val btnFavourite: MaterialCardView = itemView.findViewById(R.id.BtnFavourite)
 
+        // Thêm loading components
         private val loadingContainer: LinearLayout? = itemView.findViewById(R.id.loadingContainer)
         private val progressBar: ProgressBar? = itemView.findViewById(R.id.progressBar)
         private val tvLoadingText: TextView? = itemView.findViewById(R.id.tvLoadingText)
@@ -108,37 +152,40 @@ class ChatAdapter(
                 showNormalState(message.content)
             }
 
+
+            // Khởi tạo WebView
+            webview.settings.javaScriptEnabled = true
+            webview.settings.domStorageEnabled = true // Bật DOM storage
+
             chatDolphin?.visibility = View.VISIBLE
             vOther?.visibility = if (message.showVOther && !message.showLoading) View.VISIBLE else View.GONE
-
-            // Chỉ cập nhật UI favourite button, không reset logic
-            updateFavouriteButton(message)
-
-            // Clear previous listeners để tránh conflict
-            btnOtherAnswer.setOnClickListener(null)
-            btnCopy.setOnClickListener(null)
-            btnFavourite.setOnClickListener(null)
 
             btnOtherAnswer.setOnClickListener {
                 if (!message.showLoading) {
                     onDeleteClick?.invoke(position)
                 }
             }
-
             btnCopy.setOnClickListener {
                 if (!message.showLoading && message.content.isNotEmpty()) {
                     copyText(itemView.context, message.content)
                 }
             }
-
-            // Handle favourite click - chỉ set listener khi không loading
             if (!message.showLoading && message.content.isNotEmpty() && !message.isUser) {
                 btnFavourite.setOnClickListener {
                     handleFavouriteClick(message, position)
                 }
             }
         }
+        private fun copyText(context: Context, text: String) {
+            try {
+                val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+                val clip = ClipData.newPlainText("AI Response", text)
+                clipboard.setPrimaryClip(clip)
 
+            } catch (e: Exception) {
+                SLog.d("Error copying to clipboard: ${e.message}")
+            }
+        }
         private fun updateFavouriteButton(message: Message) {
 
             val isFavourite = SimpleFavouriteManager.isFavourite(itemView.context, message.content)
@@ -156,8 +203,6 @@ class ChatAdapter(
                 }
             }
         }
-
-
         private fun handleFavouriteClick(message: Message, position: Int) {
 
             val context = itemView.context
@@ -169,11 +214,9 @@ class ChatAdapter(
                     // Thêm vào favourite
                     SimpleFavouriteManager.addToFavourite(context, message.content)
                     SLog.d("Da them : $newFavouriteState")
-                    Toast.makeText(context, "Đã thêm vào yêu thích", Toast.LENGTH_SHORT).show()
                 } else {
                     SimpleFavouriteManager.removeFromFavourite(context, message.content)
                     SLog.d("Xoa : $newFavouriteState")
-                    Toast.makeText(context, "Đã xóa khỏi yêu thích", Toast.LENGTH_SHORT).show()
                 }
                 message.isFavourite = newFavouriteState
                 updateFavouriteButton(message)
@@ -184,32 +227,29 @@ class ChatAdapter(
             }
         }
 
-        private fun copyText(context: Context, text: String) {
-            try {
-                val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-                val clip = ClipData.newPlainText("AI Response", text)
-                clipboard.setPrimaryClip(clip)
-                Toast.makeText(context, "Đã sao chép câu trả lời", Toast.LENGTH_SHORT).show()
-            } catch (e: Exception) {
-                Toast.makeText(context, "Lỗi khi sao chép", Toast.LENGTH_SHORT).show()
-            }
-        }
-
         private fun showLoadingState(loadingText: String) {
-            tvAIMessage.hide()
-            mathView2.hide()
+//            mathView2.hide()
+            webview.hide()
 
+            // Hiển thị loading views
             loadingContainer?.show()
             progressBar?.show()
             if (loadingContainer == null) {
 
-                mathView2.apply {
+                /*mathView2.apply {
                     show()
                     text = loadingText
                     pixelScaleType = MathView.Scale.SCALE_DP
                     setTextSize(16)
                     textColor = "#666666"
-                }
+                }*/
+
+                webview.show()
+
+
+                displayMarkdown(loadingText)
+
+
             }
         }
 
@@ -218,13 +258,57 @@ class ChatAdapter(
             progressBar?.hide()
             tvLoadingText?.hide()
 
-            mathView2.apply {
+
+            /*mathView2.apply {
                 show()
                 text = content
                 pixelScaleType = MathView.Scale.SCALE_DP
                 setTextSize(16)
                 textColor = "#000000"
-            }
+            }*/
+
+            webview.show()
+
+            displayMarkdown(content)
+
+        }
+
+        private fun displayMarkdown(rawMarkdown: String) {
+            // Bước 1: Chuẩn hóa chuỗi markdown từ API (thay \\n -> \n thật)
+            val cleanMarkdown = rawMarkdown.replace("\\n", "\n")
+
+            // Bước 2: Convert các biểu thức toán inline từ $$...$$ → $...$
+            val inlineFixed = cleanMarkdown.replace("\\$\\$(.*?)\\$\\$".toRegex(), "\\$$1\\$")
+
+            // Bước 3: Escape nếu cần (trong trường hợp nhúng vào JS)
+// (Có thể bỏ nếu không cần truyền qua JS template)
+            val escaped = inlineFixed
+                .replace("\\", "\\\\")
+                .replace("`", "\\`")
+                .replace("$", "\\$")
+
+            // Load vào WebView
+            val htmlContent: String = String.format(htmlTemplate, escaped)
+            webview.loadDataWithBaseURL(
+                "file:///android_asset/",
+                htmlContent,
+                "text/html",
+                "utf-8",
+                null
+            )
+
+//        // Bước 1: Chuẩn hóa chuỗi markdown từ API (thay \\n -> \n thật)
+//        String cleanMarkdown = rawMarkdown.replace("\\n", "\n");
+//
+//        // Bước 2: Escape ký tự đặc biệt để truyền vào JavaScript (cẩn thận $ và `)
+//        String escapedMarkdown = cleanMarkdown
+//                .replace("\\", "\\\\")     // escape backslash
+//                .replace("`", "\\`")       // escape backtick
+//                .replace("$", "\\$");      // escape dollar sign for LaTeX
+//
+//        // Bước 3: Gắn vào HTML và hiển thị
+//        String htmlContent = String.format(htmlTemplate, escapedMarkdown);
+//        webView.loadDataWithBaseURL("file:///android_asset/", htmlContent, "text/html", "utf-8", null);
         }
     }
 }
