@@ -5,7 +5,6 @@ import android.graphics.Rect
 import android.graphics.RectF
 import android.net.Uri
 import android.view.LayoutInflater
-import com.hieuld.datn.mathsolved.R
 import com.hieuld.datn.mathsolved.base.activity.BaseActivity
 import com.hieuld.datn.mathsolved.base.viewmodel.BaseViewModel
 import com.hieuld.datn.mathsolved.data.enums.EnumSubject
@@ -33,6 +32,8 @@ class CropImageActivity :
 
 
     private var typeSubjectSelected = EnumSubject.MATH.typeSub
+
+    private var selectedLanguageCode = "en" // Mã ngôn ngữ mặc định
 
     override fun inflateViewBinding(inflater: LayoutInflater): ActivityCropImageBinding {
         return ActivityCropImageBinding.inflate(inflater)
@@ -106,7 +107,9 @@ class CropImageActivity :
                 ChatActivity.bitmapResult =
                     imageBitmap ?: Bitmap.createBitmap(128, 128, Bitmap.Config.ARGB_8888)
 
-                openActivity(ChatActivity::class.java)
+                openActivity(ChatActivity::class.java) {
+                    putString(TYPE_SUBJECT_SELECTED, typeSubjectSelected)
+                }
 //                openActivity(AdvisorFragment::class.java)
 
 

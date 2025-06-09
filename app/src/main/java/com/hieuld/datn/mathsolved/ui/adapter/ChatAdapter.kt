@@ -297,7 +297,7 @@ class ChatAdapter(
                 null
             )
 
-//        // Bước 1: Chuẩn hóa chuỗi markdown từ API (thay \\n -> \n thật)
+//        // B  nước 1: Chuẩn hóa chuỗi markdown từ API (thay \\n -> \n thật)
 //        String cleanMarkdown = rawMarkdown.replace("\\n", "\n");
 //
 //        // Bước 2: Escape ký tự đặc biệt để truyền vào JavaScript (cẩn thận $ và `)

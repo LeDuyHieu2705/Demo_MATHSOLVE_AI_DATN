@@ -1,10 +1,17 @@
 package com.hieuld.datn.mathsolved.ui.activity
 
+import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
+import android.view.Window
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.button.MaterialButton
+import com.hieuld.datn.mathsolved.R
 import com.hieuld.datn.mathsolved.base.activity.BaseActivity
 import com.hieuld.datn.mathsolved.base.viewmodel.BaseViewModel
 import com.hieuld.datn.mathsolved.databinding.ActivityFavouriteBinding
@@ -82,21 +89,51 @@ class FavouriteActivity :
     }
 
     private fun showClearAllDialog() {
-        AlertDialog.Builder(this)
-            .setTitle("Xóa tất cả")
-            .setMessage("Bạn có chắc chắn muốn xóa tất cả câu trả lời yêu thích?")
-            .setPositiveButton("Xóa") { _, _ ->
-                clearAllFavourites()
-            }
-            .setNegativeButton("Hủy", null)
-            .show()
+        // Create custom dialog
+        val dialog = Dialog(this)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setContentView(R.layout.dialog_clear_all_favourite)
+
+        // Make dialog cancelable
+        dialog.setCancelable(true)
+        dialog.setCanceledOnTouchOutside(true)
+
+        // Set dialog window properties
+        dialog.window?.let { window ->
+            window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            window.setLayout(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+            )
+            window.setGravity(Gravity.CENTER)
+
+            // Add scale animation for clear all dialog
+            window.attributes.windowAnimations = R.style.DialogScaleAnimation
+        }
+
+        // Get dialog views
+        val btnCancel = dialog.findViewById<MaterialButton>(R.id.btnCancel)
+        val btnClearAll = dialog.findViewById<MaterialButton>(R.id.btnClearAll)
+
+        // Set click listeners
+        btnCancel.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        btnClearAll.setOnClickListener {
+            clearAllFavourites()
+            dialog.dismiss()
+        }
+
+        // Show dialog
+        dialog.show()
     }
 
     private fun clearAllFavourites() {
         SimpleFavouriteManager.clearAllFavourites(this)
         adapter.updateFavourites(emptyList())
         updateUIState(true)
-        Toast.makeText(this, "Đã xóa tất cả yêu thích", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, getString(R.string.toast_all_cleared), Toast.LENGTH_SHORT).show()
     }
 
     private fun removeFavouriteMessage(message: String, position: Int) {
@@ -110,13 +147,12 @@ class FavouriteActivity :
         adapter.updateFavourites(sortedItems)
         updateUIState(sortedItems.isEmpty())
 
-        Toast.makeText(this, "Đã xóa khỏi yêu thích", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, getString(R.string.toast_removed_from_favourite), Toast.LENGTH_SHORT).show()
     }
 
     private fun copyToClipboard(message: String) {
         val clipboard = getSystemService(android.content.Context.CLIPBOARD_SERVICE) as android.content.ClipboardManager
         val clip = android.content.ClipData.newPlainText("Favourite Message", message)
         clipboard.setPrimaryClip(clip)
-        Toast.makeText(this, "Đã sao chép", Toast.LENGTH_SHORT).show()
     }
 }

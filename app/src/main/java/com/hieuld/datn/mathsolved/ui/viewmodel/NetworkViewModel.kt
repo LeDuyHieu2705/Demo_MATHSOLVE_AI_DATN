@@ -3,6 +3,7 @@ package com.hieuld.datn.mathsolved.ui.viewmodel
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.hieuld.datn.mathsolved.base.viewmodel.BaseViewModel
+import com.hieuld.datn.mathsolved.data.enums.EnumSubject
 import com.hieuld.datn.mathsolved.data.models.ResDataUser
 import com.hieuld.datn.mathsolved.network.RetrofitHelper
 import com.hieuld.datn.mathsolved.network.RetrofitService
@@ -28,7 +29,7 @@ class NetworkViewModel : BaseViewModel() {
 
     fun getDataUser() {
 
-        val urlRes = "https://app.cscmobicorp.com/aimath/api/v1/chat"
+        val urlRes = "https://app.cscmobicorp.com/mathedu/api/v1/chat"
 
         job.launch {
 
@@ -55,16 +56,16 @@ class NetworkViewModel : BaseViewModel() {
     }
 
 
-    fun chatWithAI(imageBase64: String) {
+    fun chatWithAI(imageBase64: String, subjectCode: String = "MATHEMATICS") {
         if (imageBase64.isEmpty()) return
 
         val req = ResDataUser(
             image = imageBase64,
             language = diFileComponent.sharedPreferenceUtils.selectedLanguageCode,
-            message = "Giải phương trình", // default nội dung
+            message = getDefaultMessageBySubject(subjectCode),
             param1 = "1",
             param2 = "1",
-            subject_code = "MATHEMATICS",
+            subject_code = subjectCode, // Sử dụng subject code động
             user_id = "user-123"
         )
 
@@ -116,6 +117,22 @@ class NetworkViewModel : BaseViewModel() {
                 _chatResponse.emit("Đã xảy ra lỗi khi gọi AI.")
             }
         }
+    }
+    private fun getDefaultMessageBySubject(subjectCode: String): String {
+        return when (subjectCode) {
+            EnumSubject.MATH.typeSub -> "Giải phương trình"
+            EnumSubject.PHYSICS.typeSub  -> "Giải bài tập vật lý"
+            EnumSubject.CHEMISTRY.typeSub  -> "Giải bài tập hóa học"
+            EnumSubject.TRANSLATE.typeSub -> "Dich sang ngon ngu: $selectedLanguageCode"
+            else -> "Giải bài tập"
+        }
+    }
+
+
+    private var selectedLanguageCode = "en" // Mã ngôn ngữ mặc định
+
+    fun setLanguageTranslate(lang: String) {
+        this.selectedLanguageCode = lang
     }
 
 

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@drawable/dialog_background">
+
+    <!-- Dialog Icon -->
+    <ImageView
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/ic_delete_outline"
+        android:tint="@color/colorWarning"
+        android:background="@drawable/circle_warning_background"
+        android:padding="12dp" />
+
+    <!-- Dialog Title -->
+    <TextView
+        android:id="@+id/tvDialogTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dialog_clear_all_title"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/textColorPrimary"
+        android:gravity="center"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Dialog Message -->
+    <TextView
+        android:id="@+id/tvDialogMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dialog_clear_all_message"
+        android:textSize="16sp"
+        android:textColor="@color/textColorSecondary"
+        android:gravity="center"
+        android:lineSpacingExtra="4dp"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Warning Note -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dialog_clear_all_warning"
+        android:textSize="14sp"
+        android:textColor="@color/colorWarning"
+        android:textStyle="italic"
+        android:gravity="center"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/warning_note_background"
+        android:padding="12dp" />
+
+    <!-- Button Container -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <!-- Cancel Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCancel"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:text="@string/dialog_cancel"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:backgroundTint="@color/colorSurface"
+            app:strokeColor="@color/colorPrimary"
+            app:strokeWidth="2dp"
+            app:cornerRadius="12dp"
+            app:iconGravity="textStart"
+            app:icon="@drawable/ic_cancel"
+            app:iconTint="@color/colorPrimary"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+        <!-- Clear All Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnClearAll"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="@string/dialog_clear_all"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:backgroundTint="@color/colorWarning"
+            app:cornerRadius="12dp"
+            app:iconGravity="textStart"
+            app:icon="@drawable/ic_delete_sweep"
+            app:iconTint="@android:color/white"
+            style="@style/Widget.MaterialComponents.Button" />
+
+    </LinearLayout>
+
+</LinearLayout>

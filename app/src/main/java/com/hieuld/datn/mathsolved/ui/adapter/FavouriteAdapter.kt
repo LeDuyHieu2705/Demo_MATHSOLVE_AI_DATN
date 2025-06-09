@@ -1,15 +1,21 @@
 package com.hieuld.datn.mathsolved.ui.adapter
 
+import android.app.Dialog
 import android.content.Context
 import android.content.res.ColorStateList
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
 import android.webkit.WebView
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.button.MaterialButton
 import com.hieuld.datn.mathsolved.R
 import com.hieuld.datn.mathsolved.utils.commons.utils.show
 import java.text.SimpleDateFormat
@@ -114,14 +120,41 @@ class FavouriteAdapter(
         }
 
         private fun showRemoveDialog(context: Context, message: String, position: Int) {
-            androidx.appcompat.app.AlertDialog.Builder(context)
-                .setTitle("Xóa khỏi yêu thích")
-                .setMessage("Bạn có chắc chắn muốn xóa câu trả lời này khỏi danh sách yêu thích?")
-                .setPositiveButton("Xóa") { _, _ ->
-                    onRemoveClick?.invoke(message, position)
-                }
-                .setNegativeButton("Hủy", null)
-                .show()
+            // Create custom dialog
+            val dialog = Dialog(context)
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+            dialog.setContentView(R.layout.dialog_remove_favourite)
+
+            // Make dialog cancelable
+            dialog.setCancelable(true)
+            dialog.setCanceledOnTouchOutside(true)
+
+            // Set dialog window properties
+            dialog.window?.let { window ->
+                window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+                window.setLayout(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT
+                )
+                window.setGravity(Gravity.CENTER)
+
+                // Add slide animation
+                window.attributes.windowAnimations = R.style.DialogAnimation
+            }
+
+            val btnCancel = dialog.findViewById<MaterialButton>(R.id.btnCancel)
+            val btnDelete = dialog.findViewById<MaterialButton>(R.id.btnDelete)
+
+            btnCancel.setOnClickListener {
+                dialog.dismiss()
+            }
+
+            btnDelete.setOnClickListener {
+                onRemoveClick?.invoke(message, position)
+                dialog.dismiss()
+            }
+
+            dialog.show()
         }
         private fun displayMarkdown(rawMarkdown: String) {
             // Bước 1: Chuẩn hóa chuỗi markdown từ API (thay \\n -> \n thật)

@@ -6,9 +6,9 @@ object DataConstants {
 
 
     val urlHost = if (BuildConfig.DEBUG) {
-        "https://app.cscmobicorp.com/aimath/"
+        "https://app.cscmobicorp.com/mathedu/"
     } else {
-        "https://app.cscmobicorp.com/aimath/"
+        "https://app.cscmobicorp.com/mathedu/"
     }
 
 

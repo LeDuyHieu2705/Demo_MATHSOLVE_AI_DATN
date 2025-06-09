@@ -31,7 +31,6 @@
                 android:id="@+id/btnBack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
                 android:layout_marginEnd="@dimen/widget_size_12"
                 app:cardBackgroundColor="@android:color/white"
                 app:cardCornerRadius="8dp"
@@ -55,6 +54,7 @@
                 android:textSize="@dimen/font_size_16" />
 
             <com.google.android.material.card.MaterialCardView
+                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -70,6 +70,7 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
+                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/widget_size_12"
@@ -151,6 +152,7 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/btnFile"
+                android:visibility="gone"
                 android:layout_width="@dimen/widget_size_26"
                 android:layout_height="@dimen/widget_size_26"
                 android:layout_marginTop="@dimen/widget_size_12"
@@ -170,6 +172,7 @@
                 android:id="@+id/btnMic"
                 android:layout_width="@dimen/widget_size_26"
                 android:layout_height="@dimen/widget_size_26"
+                android:visibility="gone"
                 android:layout_marginStart="@dimen/widget_size_16"
                 app:cardBackgroundColor="@android:color/white"
                 app:cardCornerRadius="@dimen/widget_size_50"
@@ -189,7 +192,7 @@
                 android:layout_marginEnd="@dimen/widget_size_12"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:cardCornerRadius="@dimen/widget_size_50"
-
+                android:layout_marginTop="@dimen/widget_size_10"
                 app:layout_constraintTop_toTopOf="@id/btnMic"
                 app:strokeWidth="0dp">
 

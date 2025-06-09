@@ -15,10 +15,12 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hieuld.datn.mathsolved.base.activity.BaseActivity
+import com.hieuld.datn.mathsolved.data.enums.EnumSubject
 import com.hieuld.datn.mathsolved.databinding.ActivityChatBinding
 import com.hieuld.datn.mathsolved.ui.adapter.ChatAdapter
 import com.hieuld.datn.mathsolved.ui.message.Message
 import com.hieuld.datn.mathsolved.ui.viewmodel.NetworkViewModel
+import com.hieuld.datn.mathsolved.utils.Constants.Companion.TYPE_SUBJECT_SELECTED
 import com.hieuld.datn.mathsolved.utils.commons.utils.SLog
 import com.pixelcarrot.base64image.Base64Image
 import kotlinx.coroutines.delay
@@ -31,6 +33,9 @@ class ChatActivity : BaseActivity<NetworkViewModel, ActivityChatBinding>(Network
     private var lastAIMessagePosition = -1
     private var isAIProcessing = false
 
+    private var typeSubjectSelected = EnumSubject.MATH.typeSub
+
+    private var messageFirst = ""
     companion object {
         var bitmapResult: Bitmap = Bitmap.createBitmap(128, 128, Bitmap.Config.ARGB_8888)
     }
@@ -51,15 +56,44 @@ class ChatActivity : BaseActivity<NetworkViewModel, ActivityChatBinding>(Network
     override fun preLoadData() {
         super.preLoadData()
 
+        typeSubjectSelected = intent.getStringExtra(TYPE_SUBJECT_SELECTED) ?: EnumSubject.MATH.typeSub
+
+        when (typeSubjectSelected) {
+            EnumSubject.MATH.typeSub -> {
+                messageFirst = "Math: "
+            }
+            EnumSubject.PHYSICS.typeSub -> {
+                messageFirst = "Physics: "
+
+            }
+            EnumSubject.CHEMISTRY.typeSub -> {
+                messageFirst = "Chemistry: "
+            }
+            EnumSubject.TRANSLATE.typeSub ->{
+                messageFirst = "Translate: "
+                viewModel.setLanguageTranslate("vi")
+            }
+
+
+            else -> {
+
+            }
+
+        }
+
+
+
         Base64Image.encode(bitmapResult) { base64 ->
             imageBase64 = base64 ?: ""
             Log.d("AdvisorFragment", "Base64 image = $imageBase64")
 
             if (imageBase64.isNotEmpty()) {
                 setAIProcessing(true)
-                addUserImage("Math: ")
+                addUserImage(messageFirst)
                 addAILoadingMessage("Đang phân tích hình ảnh...")
-                viewModel.chatWithAI(imageBase64)
+                viewModel.chatWithAI(
+                    imageBase64 = imageBase64,
+                    subjectCode = typeSubjectSelected)
             }
         }
     }

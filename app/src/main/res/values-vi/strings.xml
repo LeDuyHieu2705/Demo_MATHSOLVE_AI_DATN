@@ -49,6 +49,9 @@
 
 
     <string name="txt_sub_math">Toán</string>
+    <string name="txt_sub_physics">Vật Lý</string>
+    <string name="txt_sub_chemistry"> Hóa Học </string>
+
     <string name="txt_sub_check_grammar">Kiểm tra ngữ pháp</string>
     <string name="txt_sub_translate">Dịch</string>
     <string name="share_to">Chia sẻ tới:</string>
@@ -56,6 +59,9 @@
     <string name="mes_no_email_clients_installed">Không có ứng dụng email nào được cài đặt</string>
     <string name="quick_search">Tìm kiếm nhanh</string>
     <string name="take_the_picture_of_a_math_problem">Chụp ảnh bài toán</string>
+    <string name="take_the_picture_of_a_physics_problem">Chụp ảnh bài vật lý</string>
+    <string name="take_the_picture_of_a_chemistry_problem">Chụp ảnh bài hóa học</string>
+
     <string name="picture">Ảnh</string>
     <string name="math">Toán</string>
     <string name="txt_math_problem">Chỉ cần chụp bài toán của bạn</string>
@@ -90,5 +96,18 @@
     <string name="txt_loading">Đang tải...</string>
     <string name="txt_next">Tiếp theo</string>
     <string name="txt_ai_assistant">Trợ lý AI</string>
+    <string name="dialog_remove_title">Xóa khỏi yêu thích</string>
+    <string name="dialog_remove_message">Bạn có chắc chắn muốn xóa câu trả lời này khỏi danh sách yêu thích?</string>
+    <string name="dialog_delete">Xóa</string>
+    <!-- Clear All Dialog strings -->
+    <string name="dialog_clear_all_title">Xóa tất cả yêu thích</string>
+    <string name="dialog_clear_all_message">Bạn có chắc chắn muốn xóa tất cả câu trả lời yêu thích?</string>
+    <string name="dialog_clear_all_warning">Hành động này không thể hoàn tác!</string>
+    <string name="dialog_clear_all">Xóa tất cả</string>
+    <string name="dialog_cancel">Hủy</string>
 
+    <!-- Toast messages -->
+    <string name="toast_all_cleared">Đã xóa tất cả yêu thích</string>
+    <string name="toast_removed_from_favourite">Đã xóa khỏi yêu thích</string>
+    <string name="toast_copied">Đã sao chép</string>
 </resources>

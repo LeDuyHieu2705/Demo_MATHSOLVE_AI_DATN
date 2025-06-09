@@ -49,6 +49,9 @@
 
 
     <string name="txt_sub_math">Math</string>
+    <string name="txt_sub_physics">Physics</string>
+    <string name="txt_sub_chemistry">Chemistry</string>
+
     <string name="txt_sub_check_grammar">Check grammar</string>
     <string name="txt_sub_translate">Translate</string>
     <string name="share_to">Share to:</string>
@@ -58,6 +61,9 @@
 
     <string name="quick_search">Quick search</string>
     <string name="take_the_picture_of_a_math_problem">Take the picture of a math problem</string>
+    <string name="take_the_picture_of_a_physics_problem">Take the picture of a physics problem</string>
+    <string name="take_the_picture_of_a_chemistry_problem">Take the picture of a chemistry problem</string>
+
     <string name="picture">Picture</string>
     <string name="math">Math</string>
     <string name="txt_math_problem">Just snap your Math problem</string>
@@ -92,4 +98,18 @@
     <string name="txt_loading">Loading...</string>
     <string name="txt_next">Next</string>
     <string name="txt_ai_assistant">AI Assistant</string>
+    <string name="dialog_remove_title">Remove from Favorites</string>
+    <string name="dialog_remove_message">Are you sure you want to remove this answer from your favorites list?</string>
+    <string name="dialog_delete">Delete</string>
+    <!-- Clear All Dialog strings -->
+    <string name="dialog_clear_all_title">Clear All Favorites</string>
+    <string name="dialog_clear_all_message">Are you sure you want to remove all favorite answers?</string>
+    <string name="dialog_clear_all_warning">This action cannot be undone!</string>
+    <string name="dialog_clear_all">Clear All</string>
+    <string name="dialog_cancel">Cancel</string>
+
+    <!-- Toast messages -->
+    <string name="toast_all_cleared">All favorites cleared</string>
+    <string name="toast_removed_from_favourite">Removed from favorites</string>
+    <string name="toast_copied">Copied</string>
 </resources>

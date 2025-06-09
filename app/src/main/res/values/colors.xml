@@ -120,5 +120,15 @@
     <color name="gray">#808080</color>
 
     <color name="tv_color_main">#192702</color>
-
+    <color name="colorError">#F44336</color>
+    <color name="colorPrimary">#2196F3</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorOutline">#E0E0E0</color>
+    <color name="textColorPrimary">#212121</color>
+    <color name="textColorSecondary">#757575</color>
+    <!-- Warning Colors -->
+    <color name="colorWarning">#FF9800</color>
+    <color name="colorWarningLight">#FFF3E0</color>
+    <color name="colorWarningBackground">#FFF8E1</color>
+    <color name="colorWarningBorder">#FFE0B2</color>
 </resources>

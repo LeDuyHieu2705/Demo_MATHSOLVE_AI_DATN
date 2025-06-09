@@ -104,6 +104,9 @@ class CameraFragment : BaseFragment<BaseViewModel,FragmentCameraBinding>(BaseVie
 
             // Add tabs with proper titles
             addTab(newTab().setText(getString(EnumSubject.MATH.nameSub)))
+            addTab(newTab().setText(getString(EnumSubject.PHYSICS.nameSub)))
+            addTab(newTab().setText(getString(EnumSubject.CHEMISTRY.nameSub)))
+
 //            addTab(newTab().setText(getString(EnumSubject.CHECK_GRAMMAR.nameSub)))
 //            addTab(newTab().setText(getString(EnumSubject.TRANSLATE.nameSub)))
 
@@ -137,11 +140,20 @@ class CameraFragment : BaseFragment<BaseViewModel,FragmentCameraBinding>(BaseVie
                 updateUIForSubject(EnumSubject.MATH)
             }
             1 -> {
+                SLog.d("Đã chọn tab: Physics")
+                typeSubjectSelected = EnumSubject.PHYSICS.typeSub
+                updateUIForSubject(EnumSubject.PHYSICS)
+            }
+            2 -> {
+                typeSubjectSelected = EnumSubject.CHEMISTRY.typeSub
+                updateUIForSubject(EnumSubject.CHEMISTRY)
+            }
+            3 -> {
                 SLog.d("Đã chọn tab: Check Grammar")
                 typeSubjectSelected = EnumSubject.CHECK_GRAMMAR.typeSub
                 updateUIForSubject(EnumSubject.CHECK_GRAMMAR)
             }
-            2 -> {
+            4 -> {
                 SLog.d("Đã chọn tab: Translate")
                 typeSubjectSelected = EnumSubject.TRANSLATE.typeSub
                 updateUIForSubject(EnumSubject.TRANSLATE)
@@ -160,7 +172,15 @@ class CameraFragment : BaseFragment<BaseViewModel,FragmentCameraBinding>(BaseVie
             when (subject) {
                 EnumSubject.MATH -> {
                     hideLanguageSelection()
-                    tvInstruction2.text = "Take the picture of a math problem"
+                    tvInstruction2.text = getString(R.string.take_the_picture_of_a_math_problem)
+                }
+                EnumSubject.PHYSICS->{
+                    hideLanguageSelection()
+                    tvInstruction2.text = getString(R.string.take_the_picture_of_a_physics_problem)
+                }
+                EnumSubject.CHEMISTRY -> {
+                    hideLanguageSelection()
+                    tvInstruction2.text = getString(R.string.take_the_picture_of_a_chemistry_problem)
                 }
                 EnumSubject.CHECK_GRAMMAR -> {
                     tvInstruction2.text = "Take the picture of a grammar problem"
