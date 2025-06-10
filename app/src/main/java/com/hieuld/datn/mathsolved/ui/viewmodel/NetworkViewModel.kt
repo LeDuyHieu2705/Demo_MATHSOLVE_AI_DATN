@@ -87,7 +87,7 @@ class NetworkViewModel : BaseViewModel() {
             }
         }
     }
-    fun chatWithAIText(userMessage: String) {
+    fun chatWithAIText(userMessage: String, subjectCode: String = "MATHEMATICS") {
         if (userMessage.isEmpty()) return
 
         val req = ResDataUser(
@@ -96,7 +96,7 @@ class NetworkViewModel : BaseViewModel() {
             message = userMessage,
             param1 = "1",
             param2 = "1",
-            subject_code = "MATHEMATICS",
+            subject_code = subjectCode,
             user_id = "user-123"
         )
 
