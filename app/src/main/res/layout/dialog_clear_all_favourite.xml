@@ -70,16 +70,16 @@
             android:layout_weight="1"
             android:layout_marginEnd="8dp"
             android:text="@string/dialog_cancel"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/background_selected_day"
             android:textSize="16sp"
             android:textStyle="bold"
             android:backgroundTint="@color/colorSurface"
-            app:strokeColor="@color/colorPrimary"
+            app:strokeColor="@color/background_selected_day"
             app:strokeWidth="2dp"
             app:cornerRadius="12dp"
             app:iconGravity="textStart"
             app:icon="@drawable/ic_cancel"
-            app:iconTint="@color/colorPrimary"
+            app:iconTint="@color/background_selected_day"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
         <!-- Clear All Button -->
