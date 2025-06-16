@@ -128,7 +128,7 @@ class ChatAdapter(
 //        private val mathView2: MathView = itemView.findViewById(R.id.mathView2)
         private val webview: WebView = itemView.findViewById(R.id.webView)
 
-
+    
 
         private val chatDolphin: LinearLayout? = itemView.findViewById(R.id.chatDolphin)
         private val vOther: View? = itemView.findViewById(R.id.vOther)
