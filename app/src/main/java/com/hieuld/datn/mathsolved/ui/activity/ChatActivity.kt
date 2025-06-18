@@ -44,7 +44,7 @@ class ChatActivity : BaseActivity<NetworkViewModel, ActivityChatBinding>(Network
         return ActivityChatBinding.inflate(inflater)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {    
         super.onCreate(savedInstanceState)
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
     }
